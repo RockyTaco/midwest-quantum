@@ -10,7 +10,7 @@ import { CHAPTERS } from "@/lib/chapters";
 const EXPECT = [
   {
     num: "01",
-    title: "Challenge Tracks",
+    title: "Challenge \'Quests\'",
     body: "Multiple tracks designed by student organizations and sponsors, covering quantum algorithms, error correction, quantum machine learning, and pulse programming.",
   },
   {
@@ -75,9 +75,7 @@ export default function AboutPage() {
                 About the Midwest Quantum Hackathon
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                MQH is organized entirely by student organizations across five
-                leading Midwest universities. Our mission: a long-term quantum
-                builder community, by students, for students.
+                MQH is organized entirely by student organizations at leading universities across the Midwest. Our mission is to establish a dedicated quantum-focused hackathon for undergraduates in the Midwest, ultimately supporting quantum workforce development initiatives by fostering a collaborative and technically competent community.
               </p>
             </div>
           </div>
@@ -171,12 +169,12 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Quick facts */}
+        {/* FAQs */}
         <section>
           <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
-                Quick facts
+                FAQs
               </h2>
 
               <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-2">

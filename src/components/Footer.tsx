@@ -59,7 +59,7 @@ export default function Footer() {
             >
               Ryan Manley
             </a>{" "}
-            &amp; 
+            ,
             {" "}
             <a
               href="https://www.linkedin.com/in/rohitmandapati/"
@@ -68,6 +68,15 @@ export default function Footer() {
               className="font-medium text-foreground/90 underline decoration-muted-foreground/40 underline-offset-2 hover:text-vivid"
             >
               Rohit Mandapati
+            </a>{" "}
+            &amp;{" "}
+            <a
+              href="https://www.linkedin.com/in/river-chen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground/90 underline decoration-muted-foreground/40 underline-offset-2 hover:text-vivid"
+            >
+              River Chen
             </a>
           </p>
         </div>
