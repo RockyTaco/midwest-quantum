@@ -43,10 +43,11 @@ export default function MascotBubble() {
         <p className="text-sm font-medium leading-relaxed text-foreground">
           &ldquo;{QUOTES[index]}&rdquo;
         </p>
+        {/*
         <p className="mt-2 text-right text-xs font-semibold text-vivid">
           — Qubi
         </p>
-
+        */}
         {/* Bubble Tail pointing RIGHT toward the cat */}
         <div className="absolute -right-2 top-1/2 size-3.5 -translate-y-1/2 rotate-45 border-t border-r border-border bg-card group-hover:border-vivid/50" />
       </div>
