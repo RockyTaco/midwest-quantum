@@ -10,8 +10,8 @@
 | University | Student Organization |
 |---|---|
 | **University of Illinois Urbana-Champaign** | SIGQuantum @ UIUC |
-| **Purdue University** | [Quantum Student Organization (QSO)](https://qsopurdue.org) |
-| **University of Chicago** | Chicago Student Quantum Group |
+| **Purdue University** | [Quantum Student Organization (QSO)](https://ucquantum.com/) |
+| **University of Chicago** | [UChicago Quantum Society]() |
 | **University of Illinois Chicago** | UIC Quantum Chapter |
 | **University of Wisconsin–Madison** | Wisconsin Quantum Student Club |
 
