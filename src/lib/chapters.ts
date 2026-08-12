@@ -26,7 +26,7 @@ export const CHAPTERS: Chapter[] = [
   {
     university: "University of Chicago",
     org: "UChicago Quantum Society",
-    logo: "/images/ucq_logo.png",
+    logo: "/images/ucq_logo.jpg",
     monogram: "UCQ",
     website: "https://ucquantum.com",
   },
