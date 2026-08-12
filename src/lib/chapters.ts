@@ -25,8 +25,10 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     university: "University of Chicago",
-    org: "Chicago Student Quantum Group",
-    monogram: "UC",
+    org: "UChicago Quantum Society",
+    logo: "/images/ucq_logo.png",
+    monogram: "UCQ",
+    website: "https://ucquantum.com",
   },
   {
     university: "University of Illinois Chicago",
