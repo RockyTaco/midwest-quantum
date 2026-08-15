@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <Logo className="h-4" />
             <p className="mt-2 max-w-xs text-xs leading-relaxed text-muted-foreground">
-              Midwest Quantum Hackathon<br />
+              MidQWest — Midwest Quantum Hackathon<br />
               November 14–15, 2026 · Chicago, IL
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function Footer() {
 
         <div className="mt-10 flex flex-col gap-2 border-t border-border/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11px] text-muted-foreground/70">
-            © 2026 Midwest Quantum Hackathon. Organized by student organizations.
+            © 2026 MidQWest. Organized by student organizations.
           </p>
           <p className="text-[11px] text-muted-foreground/70">
             Site built by{" "}

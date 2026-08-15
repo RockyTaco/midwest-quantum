@@ -188,7 +188,7 @@ export default function SponsorPage() {
                 Support regional quantum innovation
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                Partner with MQH to connect with top CS, physics, and engineering
+                Partner with MidQWest to connect with top CS, physics, and engineering
                 students and help build a lasting Midwest quantum talent pipeline.
               </p>
               <div className="mt-8">

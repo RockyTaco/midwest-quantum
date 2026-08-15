@@ -37,7 +37,9 @@ export const CHAPTERS: Chapter[] = [
   },
   {
     university: "University of Wisconsin–Madison",
-    org: "Wisconsin Quantum Student Club",
+    org: "Wisconsin Quantum Computing Club",
+    logo: "/images/wqcc_logo.png",
     monogram: "UW",
+    website: "https://wqi.wisc.edu/wqcc/",
   },
 ];

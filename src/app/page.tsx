@@ -83,9 +83,9 @@ export default function Home() {
                         </span>
                       </div>
 
-                      <h2 className="mt-5 font-heading text-base font-bold leading-snug tracking-tight">
+                      <h3 className="mt-5 font-heading text-base font-bold leading-snug tracking-tight">
                         {g.title}
-                      </h2>
+                      </h3>
                       <p className="mt-2 flex-1 text-[0.84rem] leading-relaxed text-muted-foreground">
                         {g.text}
                       </p>

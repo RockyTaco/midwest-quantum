@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 
 import Header from "@/components/Header";
@@ -6,6 +7,26 @@ import ChapterLogo from "@/components/ChapterLogo";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { CHAPTERS } from "@/lib/chapters";
+
+export const metadata: Metadata = {
+  title: "About the Hackathon",
+  description:
+    "Learn about MidQWest 2026, the mission to empower Midwest quantum talent, co-organizing university chapters, event structure, and FAQs.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About MidQWest 2026 — Midwest Quantum Hackathon",
+    description:
+      "Learn about the mission, organizing student chapters from UIUC, UChicago, Purdue, UIC, and UW-Madison, and FAQs for MidQWest 2026.",
+    url: "/about",
+  },
+  twitter: {
+    title: "About MidQWest 2026 — Midwest Quantum Hackathon",
+    description:
+      "Learn about the mission, organizing student chapters, and event structure for MidQWest 2026.",
+  },
+};
 
 const EXPECT = [
   {
@@ -32,7 +53,7 @@ const EXPECT = [
 
 const FAQ = [
   {
-    q: "When is MQH?",
+    q: "When is MidQWest?",
     a: "November 14–15, 2026 in Chicago. Pre-register to receive venue details, schedule information, and logistics updates.",
   },
   {
@@ -45,7 +66,7 @@ const FAQ = [
   },
   {
     q: "Is there a cost?",
-    a: "No. MQH is 100% free for all participating students. Sponsorship funding covers meals, venue operations, and prize pools.",
+    a: "No. MidQWest is 100% free for all participating students. Sponsorship funding covers meals, venue operations, and prize pools.",
   },
   {
     q: "How are teams formed?",
@@ -75,7 +96,7 @@ export default function AboutPage() {
                 About the Midwest Quantum Hackathon
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                MQH is organized entirely by student organizations at leading universities across the Midwest. Our mission is to establish a dedicated quantum-focused hackathon for undergraduates in the Midwest, ultimately supporting quantum workforce development initiatives by fostering a collaborative and technically competent community.
+                MidQWest is organized entirely by student organizations at leading universities across the Midwest. Our mission is to establish a dedicated quantum-focused hackathon for undergraduates in the Midwest, ultimately supporting quantum workforce development initiatives by fostering a collaborative and technically competent community.
               </p>
             </div>
           </div>
@@ -124,7 +145,7 @@ export default function AboutPage() {
                 Organizing chapters
               </h2>
               <p className="mt-3 text-muted-foreground">
-                The student-run chapters co-organizing MQH.
+                The student-run chapters co-organizing MidQWest.
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
