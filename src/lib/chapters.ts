@@ -42,4 +42,11 @@ export const CHAPTERS: Chapter[] = [
     monogram: "UW",
     website: "https://wqi.wisc.edu/wqcc/",
   },
+  {
+    university: "Purdue University Northwest",
+    org: "QuantumLeap Club",
+    logo: "/images/quantumleap_logo.png",
+    monogram: "PNW",
+    website: "https://mypnwlife.pnw.edu/quantumleap/home/",
+  },
 ];
