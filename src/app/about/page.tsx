@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Learn about the mission, organizing student chapters from UIUC, UChicago, Purdue, UIC, and UW-Madison, and FAQs for MidQWest 2026.",
+      "Learn about the mission, organizing student chapters from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison, and FAQs for MidQWest 2026.",
     url: "/about",
   },
   twitter: {

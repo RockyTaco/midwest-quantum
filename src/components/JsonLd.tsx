@@ -12,7 +12,7 @@ export default function JsonLd() {
           "Midwest Quantum Hackathon",
           "MQH"
         ],
-        "description": "The premier Midwest quantum computing hackathon organized by student leaders from UIUC, UChicago, Purdue, UIC, and UW-Madison.",
+        "description": "The premier Midwest quantum computing hackathon organized by student leaders from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison.",
         "inLanguage": "en-US"
       },
       {
@@ -26,7 +26,8 @@ export default function JsonLd() {
           "https://sigquantum.com",
           "https://qsopurdue.org",
           "https://ucquantum.com",
-          "https://wqi.wisc.edu/wqcc/"
+          "https://wqi.wisc.edu/wqcc/",
+          "https://mypnwlife.pnw.edu/quantumleap/home/"
         ]
       },
       {

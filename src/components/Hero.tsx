@@ -62,6 +62,7 @@ export default function Hero() {
                 <span className="font-medium text-foreground">UIUC</span>,{" "}
                 <span className="font-medium text-foreground">UChicago</span>,{" "}
                 <span className="font-medium text-foreground">Purdue</span>,{" "}
+                <span className="font-medium text-foreground">Purdue Northwest</span>,{" "}
                 <span className="font-medium text-foreground">UW&#8209;Madison</span>,{" "}
                 and <span className="font-medium text-foreground">UIC</span>.
               </p>
@@ -97,7 +98,7 @@ export default function Hero() {
           {/* 5 — Stats */}
           <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-border/60 pt-6">
             {[
-              { value: "5",    label: "University chapters" },
+              { value: "6",    label: "University chapters" },
               { value: "100%", label: "Student-organized" },
               { value: "3",    label: "Midwest states" },
             ].map((s) => (

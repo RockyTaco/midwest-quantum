@@ -13,7 +13,7 @@ const GATEWAYS = [
     num: "01",
     icon: Users,
     title: "About the Hackathon",
-    text: "Co-organized by student chapters at UIUC, UChicago, Purdue, UW-Madison, and UIC to build a united regional quantum community.",
+    text: "Co-organized by student chapters at UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, and UIC to build a united regional quantum community.",
     href: "/about",
     cta: "Read our vision",
     external: false,

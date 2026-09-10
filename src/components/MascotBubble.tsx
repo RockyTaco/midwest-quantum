@@ -6,7 +6,7 @@ const QUOTES = [
   "Think of what the quantum talent of the Midwest could build together!",
   "You guys should totally join the waitlist.",
   "Sponsoring MidQWest is a pretty smart move.",
-  "Five university chapters, one united community.",
+  "Six university chapters, one united community.",
   "Free for all students. Zero cost, all access.",
   "Let's converge in Chicago.",
   "Nov 14–15 in Chicago. See you there!",

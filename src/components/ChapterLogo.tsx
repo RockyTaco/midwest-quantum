@@ -14,13 +14,23 @@ export default function ChapterLogo({
 }) {
   if (chapter.logo) {
     return (
-      <Image
-        src={chapter.logo}
-        alt={`${chapter.org} logo`}
-        width={size}
-        height={size}
-        className={cn("shrink-0 rounded-md object-contain", className)}
-      />
+      <div
+        style={{ width: size, height: size }}
+        className={cn(
+          "relative flex shrink-0 items-center justify-center overflow-hidden rounded-md",
+          className
+        )}
+      >
+        <Image
+          src={chapter.logo}
+          alt={`${chapter.org} logo`}
+          width={size * 2}
+          height={size * 2}
+          unoptimized
+          priority
+          className="size-full object-contain"
+        />
+      </div>
     );
   }
 
