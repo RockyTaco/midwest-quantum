@@ -57,88 +57,80 @@ function InfoTooltip({ text }: { text: string }) {
 }
 
 const PERK_INFO: Record<string, string> = {
-  "Logo on website, signage, and event t-shirts":
-    "All tiers include branding on our website, event T-shirts, and other promotional materials. Higher tiers also get prominent logo placement on event banners and social media recognition posts on our Instagram and LinkedIn.",
-  "Discord community shoutout":
-    "A dedicated shoutout post in the MidQWest Discord server, reaching our community of quantum-interested students across Midwest universities.",
+  "Logo on website, signage, and event materials":
+    "Company name and logo featured across our official website, digital signage, print banners, and event materials.",
+  "Social media recognition":
+    "Shoutouts across our official social channels (LinkedIn, Instagram, Discord) recognizing your company as an official sponsor.",
   "Access to resume book":
-    "Receive a curated collection of résumés from hackathon participants — top CS, physics, and engineering students from UIUC, UChicago, Purdue, and more — for recruiting pipelines.",
-  "Technical Workshop":
-    "Host a workshop or tech talk during the hackathon. Share expertise in a skill, programming language, or topic relevant to the challenges. A great way to connect with and mentor potential future talent.",
-  "Dedicated sponsor table at the venue":
-    "A sponsor table in a central location within the hackathon space. Display pamphlets, hand out swag, and have on-site recruiters interact directly with students throughout the event.",
-  "Workshop or challenge-problem slot":
-    "Opportunity to host a specific challenge during the hackathon, potentially incorporating your API or products, or simply bearing your company's name. Alternatively, opt to judge a prize category and choose the winning team.",
+    "Receive a curated collection of résumés from hackathon participants — top CS, physics, and engineering students from UIUC, UChicago, Purdue, UIC, UW-Madison, and PNW.",
+  "Technical workshop (60 min)":
+    "Host a 60-minute technical session or workshop during the hackathon. Share expertise, showcase your tech stack, and mentor students.",
+  "Shared sponsor table":
+    "Table space at the venue to distribute swag, display promotional materials, and interact directly with attendees.",
+  "All Bell benefits":
+    "Includes all benefits from the Bell tier (branding, social media recognition, resume book, 60-min technical workshop).",
+  "Dedicated sponsor table":
+    "A full, dedicated sponsor table in a central location at the venue for your team and recruiters throughout the weekend.",
+  "Single challenge-problem slot":
+    "Opportunity to host a dedicated challenge problem or prize category tailored to your technology or problem area.",
   "Seat on the judging panel":
-    "Join the judging panel to evaluate participant projects, directly shaping which teams and solutions are recognized — and getting a firsthand look at student ingenuity.",
-  "Front and center branding":
-    "Maximum visibility: your logo and name are featured prominently across all event materials, the main stage, opening and closing ceremonies, and all digital and physical signage.",
-  "Work with organizing team to create custom challenge problem":
-    "Collaborate directly with the MidQWest organizing team to design a fully custom hackathon challenge. Incorporate your APIs, products, or research themes for a tailored showcase of your technology to all participants.",
+    "Directly evaluate student submissions and help select winning teams, getting a firsthand look at top talent.",
+  "More prominent logo placement":
+    "Elevated brand visibility with larger, primary logo placement on event banners, stage backdrops, and promotional materials.",
+  "All GHZ benefits":
+    "Includes all benefits from the GHZ tier (dedicated table, challenge slot, judging seat, workshop, resume book, and prominent branding).",
+  "Named category of multiple challenges":
+    "Top-tier challenge integration: sponsor and brand a full challenge track across multiple challenge categories.",
+  "Dedicated social media feature":
+    "Individual spotlight feature across all our social media channels highlighting your company's mission and quantum initiatives.",
+  "Premium table placement":
+    "Prime, high-traffic booth placement at the venue entrance/central hall for maximum student engagement.",
+  "Post-event impact report":
+    "Comprehensive summary report detailing attendee demographics, project submissions, reach metrics, and event outcomes.",
 };
 
 const TIERS = [
   {
-    name: "Qubit",
-    badge: "Starter",
-    price: "$500",
-    tagline: "The fundamental unit… a superposition of both half a band and two-level system!",
-    description: "Establish your brand presence and reach Midwest quantum talent.",
+    name: "Bell",
+    price: "$5,000",
+    tagline: "Entangled in financials!",
+    description: "Establish your presence, recruit students, and lead a technical session at the event.",
     perks: [
-      "Logo on website, signage, and event t-shirts",
-      "Discord community shoutout",
+      "Logo on website, signage, and event materials",
+      "Social media recognition",
+      "Access to resume book",
+      "Technical workshop (60 min)",
+      "Shared sponsor table",
     ],
     accent: "border-border text-muted-foreground",
   },
   {
-    name: "Bell",
-    badge: "Supporter",
-    price: "$1,000",
-    tagline: "Entangled in financials! Isn't that grand…",
-    description: "Engage with participants and connect your team with quantum-curious students.",
+    name: "GHZ",
+    price: "$7,000",
+    tagline: "Sponsors demonstrate nonlocality by influencing hackathons at a distance, but also by attending in person!",
+    description: "Dedicated sponsor table, single challenge-problem slot, and judging panel representation.",
     perks: [
-      "Logo on website, signage, and event t-shirts",
-      "Discord community shoutout",
-      "Access to resume book",
-      "Technical Workshop",
+      "All Bell benefits",
+      "Dedicated sponsor table",
+      "Single challenge-problem slot",
+      "Seat on the judging panel",
+      "More prominent logo placement",
     ],
     accent: "border-vivid/40 bg-vivid/5 text-vivid",
   },
   {
-    name: "GHZ",
-    badge: "Partner",
-    price: "$3,000",
-    tagline: "Sponsors demonstrate nonlocality by influencing hackathons at a distance…",
-    description: "Engage directly with participants and lead a technical session on-site.",
+    name: "Partner",
+    price: "$10,000",
+    tagline: "For less than the market price for a gram of Helium-3…",
+    description: "Premier event partner with named challenge category, dedicated features, and impact reporting.",
     perks: [
-      "Logo on website, signage, and event t-shirts",
-      "Discord community shoutout",
-      "Access to resume book",
-      "Technical Workshop",
-      "Dedicated sponsor table at the venue",
-      "Workshop or challenge-problem slot",
-      "Seat on the judging panel",
+      "All GHZ benefits",
+      "Named category of multiple challenges",
+      "Dedicated social media feature",
+      "Premium table placement",
+      "Post-event impact report",
     ],
     accent: "border-transparent bg-vivid text-vivid-foreground",
-  },
-  {
-    name: "Partner",
-    badge: "Title Sponsor",
-    price: "$10,000",
-    tagline: "For not even the price of a gram of Helium-3…",
-    description: "Anchor the event with top billing, maximum visibility, and the deepest student access.",
-    perks: [
-      "Logo on website, signage, and event t-shirts",
-      "Discord community shoutout",
-      "Access to resume book",
-      "Technical Workshop",
-      "Dedicated sponsor table at the venue",
-      "Workshop or challenge-problem slot",
-      "Seat on the judging panel",
-      "Front and center branding",
-      "Work with organizing team to create custom challenge problem",
-    ],
-    accent: "border-foreground/20 bg-foreground text-background",
   },
 ] as const;
 
@@ -215,26 +207,29 @@ export default function SponsorPage() {
                   Sponsorship package
                 </h2>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Four tiers, one goal: connect your team with the Midwest&apos;s
+                  Three tiers, one goal: connect your team with the Midwest&apos;s
                   top quantum talent. 100% of funding goes directly to running the event.
                 </p>
               </div>
 
-              <div className="mt-12 grid gap-6 lg:grid-cols-4">
+              <div className="mt-12 grid gap-6 lg:grid-cols-3">
                 {TIERS.map((tier, i) => (
                   <div
                     key={tier.name}
                     data-reveal
-                    data-reveal-delay={String(i + 1) as "1" | "2" | "3" | "4"}
+                    data-reveal-delay={String(i + 1) as "1" | "2" | "3"}
                     className="flex flex-col rounded-xl border border-border bg-card p-7 card-lift"
                   >
                     <h3 className="font-heading text-2xl font-bold tracking-tight">
                       {tier.name}
                     </h3>
-                    <p className="mt-2 font-heading text-4xl font-bold text-vivid">
+                    <p className="mt-1 text-xs italic text-muted-foreground/80">
+                      {tier.tagline}
+                    </p>
+                    <p className="mt-3 font-heading text-4xl font-bold text-vivid">
                       {tier.price}
                     </p>
-                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                       {tier.description}
                     </p>
 
@@ -263,7 +258,7 @@ export default function SponsorPage() {
               {/* Hardware & Platform Callout */}
               <div
                 data-reveal
-                data-reveal-delay="5"
+                data-reveal-delay="4"
                 className="mt-8 flex flex-col items-start gap-6 rounded-xl border border-border/80 bg-muted/40 p-6 sm:flex-row sm:items-center sm:justify-between"
               >
                 <div>

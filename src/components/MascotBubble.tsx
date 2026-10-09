@@ -9,7 +9,7 @@ const QUOTES = [
   "Six university chapters, one united community.",
   "Free for all students. Zero cost, all access.",
   "Let's converge in Chicago.",
-  "Nov 14–15 in Chicago. See you there!",
+  "Nov 21–22 in Chicago. See you there!",
   "Am I alive or dead? Only one way to observe!",
   "I was in two boxes at once until you clicked me.",
   "Entangled with coffee, correlated with clean code.",

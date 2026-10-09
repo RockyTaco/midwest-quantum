@@ -31,7 +31,7 @@ export default function Hero() {
                   variant="accent"
                   className="px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest"
                 >
-                  November 14–15, 2026 · Chicago, IL
+                  November 21–22, 2026 · Chicago, IL
                 </Badge>
               </div>
 

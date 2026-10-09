@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | MidQWest 2026",
   },
   description:
-    "MidQWest is the premier Midwest quantum computing hackathon hosted at UIC Chicago on November 14–15, 2026. Organized by student leaders from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison.",
+    "MidQWest is the premier Midwest quantum computing hackathon hosted at UIC Chicago on November 21–22, 2026. Organized by student leaders from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison.",
   applicationName: "MidQWest",
   authors: [{ name: "MidQWest Organizing Team", url: "https://midqwest.dev" }],
   generator: "Next.js",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Join top Midwest undergraduates in Chicago on Nov 14–15, 2026 for 24+ hours of quantum computing challenges, workshops, and industry networking.",
+      "Join top Midwest undergraduates in Chicago on Nov 21–22, 2026 for 24+ hours of quantum computing challenges, workshops, and industry networking.",
     url: "https://midqwest.dev",
     siteName: "MidQWest",
     locale: "en_US",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "The premier Midwest quantum computing hackathon. Nov 14–15, 2026 at UIC Chicago. Free for all students.",
+      "The premier Midwest quantum computing hackathon. Nov 21–22, 2026 at UIC Chicago. Free for all students.",
     images: ["/og-image.png"],
     creator: "@midqwest",
   },

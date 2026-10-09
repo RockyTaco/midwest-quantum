@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "MidQWest 2026 — Midwest Quantum Hackathon",
     short_name: "MidQWest",
     description:
-      "A student-led quantum computing hackathon organized across Midwest universities, hosted in Chicago on November 14–15, 2026.",
+      "A student-led quantum computing hackathon organized across Midwest universities, hosted in Chicago on November 21–22, 2026.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

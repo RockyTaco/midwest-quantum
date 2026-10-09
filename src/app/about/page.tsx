@@ -54,7 +54,7 @@ const EXPECT = [
 const FAQ = [
   {
     q: "When is MidQWest?",
-    a: "November 14–15, 2026 in Chicago. Pre-register to receive venue details, schedule information, and logistics updates.",
+    a: "November 21–22, 2026 in Chicago. Pre-register to receive venue details, schedule information, and logistics updates.",
   },
   {
     q: "Where will it be held?",

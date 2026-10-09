@@ -131,7 +131,7 @@ export default function Home() {
           <ScrollReveal>
             <div className="mx-auto w-full max-w-6xl px-6 py-24 md:py-32 text-center">
               <p className="font-heading text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-                November 14–15, 2026 · Chicago, IL
+                November 21–22, 2026 · Chicago, IL
               </p>
               <h2 className="mt-4 font-heading text-4xl font-bold tracking-[-0.02em] md:text-5xl">
                 Ready to build the future<br className="hidden sm:block" /> of quantum computing?

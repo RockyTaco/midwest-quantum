@@ -19,7 +19,7 @@ export default function Footer() {
             <Logo className="h-4" />
             <p className="mt-2 max-w-xs text-xs leading-relaxed text-muted-foreground">
               MidQWest — Midwest Quantum Hackathon<br />
-              November 14–15, 2026 · Chicago, IL
+              November 21–22, 2026 · Chicago, IL
             </p>
           </div>
 

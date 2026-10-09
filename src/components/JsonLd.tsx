@@ -35,8 +35,8 @@ export default function JsonLd() {
         "@id": "https://midqwest.dev/#event",
         "name": "MidQWest 2026 — Midwest Quantum Hackathon",
         "description": "A premier student-led quantum computing hackathon in Chicago bringing together top undergraduate and graduate talent from universities across the Midwest for quests, workshops, and industry networking.",
-        "startDate": "2026-11-14T09:00:00-06:00",
-        "endDate": "2026-11-15T18:00:00-06:00",
+        "startDate": "2026-11-21T09:00:00-06:00",
+        "endDate": "2026-11-22T18:00:00-06:00",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
