@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image-v2.png",
         width: 1200,
         height: 630,
         alt: "MidQWest 2026 — Midwest Quantum Hackathon",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "MidQWest 2026 — Midwest Quantum Hackathon",
     description:
       "The premier Midwest quantum computing hackathon. Nov 21–22, 2026 at UIC Chicago. Free for all students.",
-    images: ["/og-image.png"],
+    images: ["/og-image-v2.png"],
     creator: "@midqwest",
   },
   robots: {

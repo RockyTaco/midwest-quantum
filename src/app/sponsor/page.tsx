@@ -186,7 +186,7 @@ export default function SponsorPage() {
               <div className="mt-8">
                 <Button asChild variant="outline" size="lg">
                   <a
-                    href="/MidQWest Sponsorship Brochure.pdf"
+                    href="/MidQWest_Sponsorship_Brochure.png"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

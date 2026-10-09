@@ -51,7 +51,7 @@ export default function JsonLd() {
           }
         },
         "image": [
-          "https://midqwest.dev/og-image.png",
+          "https://midqwest.dev/og-image-v2.png",
           "https://midqwest.dev/MQW_light_grad_black.png"
         ],
         "organizer": {
