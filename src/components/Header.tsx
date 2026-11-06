@@ -64,7 +64,7 @@ export default function Header() {
               boxShadow: "0 2px 12px oklch(0.58 0.24 258 / 0.25)",
             }}
           >
-            Pre-Register
+            Register
           </a>
         </div>
 
@@ -109,7 +109,7 @@ export default function Header() {
                   "linear-gradient(135deg, oklch(0.58 0.24 258) 0%, oklch(0.52 0.22 268) 100%)",
               }}
             >
-              Pre-Register
+              Register
             </a>
           </nav>
         </div>

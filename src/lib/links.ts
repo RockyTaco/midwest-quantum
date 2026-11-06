@@ -1,1 +1,1 @@
-export const WAITLIST_URL = "https://forms.gle/iXEdGw2jYNXRY5oX9";
+export const WAITLIST_URL = "https://forms.gle/6pD1NzBkKXocJZgw8";

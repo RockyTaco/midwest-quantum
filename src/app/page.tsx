@@ -30,8 +30,8 @@ const GATEWAYS = [
   {
     num: "03",
     icon: MapPin,
-    title: "Pre-Registration",
-    text: "Submit interest early! Pre-registration numbers help demonstrate student demand to sponsors to secure maximum event funding and hardware access.",
+    title: "Registration",
+    text: "Submit interest early! Registration numbers help demonstrate student demand to sponsors to secure maximum event funding and hardware access.",
     href: WAITLIST_URL,
     cta: "Join the waitlist",
     external: true,
@@ -137,7 +137,7 @@ export default function Home() {
                 Ready to build the future<br className="hidden sm:block" /> of quantum computing?
               </h2>
               <p className="mx-auto mt-5 max-w-lg text-muted-foreground leading-relaxed">
-                Free for all Midwest students. Pre-registering early helps us demonstrate student interest to sponsors so we can keep the event 100% free!
+                Free for all Midwest students. Registering early helps us demonstrate student interest to sponsors so we can keep the event 100% free!
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
                 <a
@@ -151,7 +151,7 @@ export default function Home() {
                     boxShadow: "0 4px 24px oklch(0.58 0.24 258 / 0.3)",
                   }}
                 >
-                  Pre-register now
+                  Register now
                   <ArrowRight className="size-4 transition-transform duration-150 group-hover:translate-x-0.5" />
                 </a>
                 <Link

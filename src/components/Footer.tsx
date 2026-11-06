@@ -40,7 +40,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              Pre-Register
+              Register
             </a>
           </nav>
         </div>
