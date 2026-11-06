@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
+import { Clock, ExternalLink, MapPin } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -78,6 +78,119 @@ const FAQ = [
   },
 ];
 
+const SCHEDULE_SHEET_URL =
+  "https://docs.google.com/spreadsheets/d/18AGlF_M6t0e0tSnmxXtlBA2Jgs4QvOJa0xNsMgAiVAU/edit?usp=sharing";
+
+interface ScheduleEvent {
+  time: string;
+  activity: string;
+  location?: string;
+  details?: string;
+  highlight?: boolean;
+}
+
+interface ScheduleDay {
+  day: string;
+  date: string;
+  events: ScheduleEvent[];
+}
+
+const SCHEDULE: ScheduleDay[] = [
+  {
+    day: "Saturday",
+    date: "November 21, 2026",
+    events: [
+      {
+        time: "8:00 AM – 9:30 AM",
+        activity: "Registration & Sponsor Tabling",
+        location: "Fort Dearborn A & IL C",
+        details: "Participant check-in, nametags, and initial networking with sponsors.",
+      },
+      {
+        time: "9:00 AM – 9:30 AM",
+        activity: "Opening Remarks",
+        location: "IL AB",
+        details: "Official welcome address from the MidQWest student organizers.",
+      },
+      {
+        time: "9:30 AM – 12:00 PM",
+        activity: "Sponsor Talks & Tech Workshops",
+        location: "IL AB",
+        details: "Technical deep-dives, challenge prep, and Q&A sessions.",
+      },
+      {
+        time: "12:00 PM – 1:15 PM",
+        activity: "Catered Lunch",
+        location: "Fort Dearborn A",
+        details: "Lunch provided for all participating students and mentors.",
+      },
+      {
+        time: "1:15 PM – 2:00 PM",
+        activity: "Hackathon Challenges & 'Quests' Released",
+        location: "IL AB",
+        details: "Official challenge tracks and problem statements presented by sponsors and organizers.",
+      },
+      {
+        time: "2:00 PM",
+        activity: "Hackathon Work Time Starts!",
+        location: "IL AB & Breakout Spaces",
+        details: "24-hour hack sprint officially begins — teams start hacking!",
+        highlight: true,
+      },
+      {
+        time: "5:00 PM – 6:00 PM",
+        activity: "Social Break & Mentor Networking",
+        location: "Venue Space",
+        details: "Mid-day break to connect with company reps and mentors.",
+      },
+    ],
+  },
+  {
+    day: "Sunday",
+    date: "November 22, 2026",
+    events: [
+      {
+        time: "Morning (Pre-2:00 PM)",
+        activity: "Food Trucks (Brunch / Lunch)",
+        location: "Outside / Patio",
+        details: "On-site food trucks to keep builders fueled through the final stretch.",
+      },
+      {
+        time: "2:00 PM",
+        activity: "Hackathon Work Time Ends!",
+        location: "IL AB",
+        details: "24 hours end — all project submissions and presentations due.",
+        highlight: true,
+      },
+      {
+        time: "2:00 PM – 4:00 PM",
+        activity: "Project Demos & Judging",
+        location: "Dearborn B",
+        details: "Teams present their work to academic and industry judges evaluated against rubrics.",
+      },
+      {
+        time: "2:00 PM – 4:00 PM",
+        activity: "Professional Networking",
+        location: "Exhibition Areas",
+        details: "Students talk with sponsors, share resumes, and showcase hackathon work.",
+      },
+      {
+        time: "5:00 PM",
+        activity: "Awards Ceremony & Winners Announced",
+        location: "IL AB",
+        details: "Recognition, prizes, and grants announced for winning teams.",
+        highlight: true,
+      },
+      {
+        time: "6:00 PM",
+        activity: "Event Conclusion",
+        location: "Venue Space",
+        details: "Closing remarks, final photos, and farewells.",
+      },
+    ],
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -133,6 +246,103 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Schedule */}
+        <section className="border-b border-border/60">
+          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+            <ScrollReveal>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <Badge variant="outline" className="mb-4">
+                    Event Schedule
+                  </Badge>
+                  <h2 className="font-heading text-3xl font-bold tracking-tight">
+                    Weekend schedule
+                  </h2>
+                  <p className="mt-2 text-muted-foreground">
+                    November 21–22, 2026 · University of Illinois Chicago (UIC) Campus
+                  </p>
+                </div>
+                <a
+                  href={SCHEDULE_SHEET_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-vivid transition-opacity hover:opacity-80 sm:self-auto"
+                >
+                  View live schedule in Google Sheets
+                  <ExternalLink className="size-3.5" />
+                </a>
+              </div>
+
+              <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+                {SCHEDULE.map((dayPlan, dayIdx) => (
+                  <div
+                    key={dayPlan.day}
+                    data-reveal
+                    data-reveal-delay={String(dayIdx + 1) as "1" | "2"}
+                    className="flex flex-col rounded-2xl border border-border bg-card p-6 md:p-8"
+                  >
+                    <div className="flex items-center justify-between border-b border-border/60 pb-5">
+                      <div>
+                        <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
+                          Day 0{dayIdx + 1}
+                        </span>
+                        <h3 className="mt-1 font-heading text-xl font-bold text-foreground">
+                          {dayPlan.day}
+                        </h3>
+                      </div>
+                      <span className="rounded-full border border-border bg-muted/50 px-3 py-1 font-heading text-xs font-medium text-muted-foreground">
+                        {dayPlan.date}
+                      </span>
+                    </div>
+
+                    <div className="mt-6 flow-root">
+                      <ul className="divide-y divide-border/40">
+                        {dayPlan.events.map((event, idx) => (
+                          <li
+                            key={idx}
+                            className={`py-4 first:pt-0 last:pb-0 ${
+                              event.highlight ? "rounded-lg bg-vivid/5 px-3 py-3 -mx-3" : ""
+                            }`}
+                          >
+                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                              <span className="inline-flex items-center gap-1 font-heading text-xs font-semibold text-foreground">
+                                <Clock className="size-3 text-vivid" />
+                                {event.time}
+                              </span>
+                              {event.location && (
+                                <span className="inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground">
+                                  <MapPin className="size-3 text-muted-foreground/70" />
+                                  {event.location}
+                                </span>
+                              )}
+                            </div>
+                            <h4
+                              className={`mt-1.5 font-heading text-sm font-semibold ${
+                                event.highlight ? "text-vivid" : "text-foreground"
+                              }`}
+                            >
+                              {event.activity}
+                            </h4>
+                            {event.details && (
+                              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                                {event.details}
+                              </p>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-6 text-center text-xs text-muted-foreground/80">
+                All times are in Central Time (CT). Times and locations are tentative and subject to minor adjustments as sponsor workshops are finalized.
+              </p>
             </ScrollReveal>
           </div>
         </section>

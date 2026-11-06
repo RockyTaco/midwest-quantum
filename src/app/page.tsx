@@ -13,7 +13,7 @@ const GATEWAYS = [
     num: "01",
     icon: Users,
     title: "About the Hackathon",
-    text: "Co-organized by student chapters at UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, and UIC to build a united regional quantum community.",
+    text: "Co-organized by chapters at UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, UIC, and Chicago WHPC to build a united regional quantum community.",
     href: "/about",
     cta: "Read our vision",
     external: false,
@@ -30,10 +30,10 @@ const GATEWAYS = [
   {
     num: "03",
     icon: MapPin,
-    title: "Registration",
-    text: "Submit interest early! Registration numbers help demonstrate student demand to sponsors to secure maximum event funding and hardware access.",
+    title: "Applications Open",
+    text: "Submit your application early! Applications help demonstrate student demand to sponsors to secure maximum event funding and hardware access.",
     href: WAITLIST_URL,
-    cta: "Join the waitlist",
+    cta: "Apply now!",
     external: true,
   },
 ];
@@ -151,7 +151,7 @@ export default function Home() {
                     boxShadow: "0 4px 24px oklch(0.58 0.24 258 / 0.3)",
                   }}
                 >
-                  Register now
+                  Apply now!
                   <ArrowRight className="size-4 transition-transform duration-150 group-hover:translate-x-0.5" />
                 </a>
                 <Link

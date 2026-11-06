@@ -58,13 +58,14 @@ export default function Hero() {
 
               {/* 3 — Sub-copy */}
               <p className="mt-4 max-w-lg text-[1rem] leading-[1.75] text-muted-foreground">
-                A student-led hackathon co-organized by quantum student organizations at{" "}
+                A student-led hackathon co-organized by quantum and computing organizations at{" "}
                 <span className="font-medium text-foreground">UIUC</span>,{" "}
                 <span className="font-medium text-foreground">UChicago</span>,{" "}
                 <span className="font-medium text-foreground">Purdue</span>,{" "}
                 <span className="font-medium text-foreground">Purdue Northwest</span>,{" "}
                 <span className="font-medium text-foreground">UW&#8209;Madison</span>,{" "}
-                and <span className="font-medium text-foreground">UIC</span>.
+                <span className="font-medium text-foreground">UIC</span>, and{" "}
+                <span className="font-medium text-foreground">Chicago WHPC</span>.
               </p>
 
               {/* 4 — CTAs */}
@@ -80,7 +81,7 @@ export default function Hero() {
                     boxShadow: "0 4px 20px oklch(0.58 0.24 258 / 0.3)",
                   }}
                 >
-                  Join the waitlist
+                  Apply now!
                   <ArrowRight className="size-4 transition-transform duration-150 group-hover:translate-x-0.5" />
                 </a>
                 <Button asChild size="lg" variant="outline" className="rounded-full">
@@ -98,7 +99,7 @@ export default function Hero() {
           {/* 5 — Stats */}
           <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-border/60 pt-6">
             {[
-              { value: "6",    label: "University chapters" },
+              { value: "7",    label: "Organizing chapters" },
               { value: "100%", label: "Student-organized" },
               { value: "3",    label: "Midwest states" },
             ].map((s) => (

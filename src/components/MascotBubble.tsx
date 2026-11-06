@@ -4,9 +4,9 @@ import { useState } from "react";
 
 const QUOTES = [
   "Think of what the quantum talent of the Midwest could build together!",
-  "You guys should totally join the waitlist.",
+  "You guys should totally apply now!",
   "Sponsoring MidQWest is a pretty smart move.",
-  "Six university chapters, one united community.",
+  "Seven organizing chapters, one united community.",
   "Free for all students. Zero cost, all access.",
   "Let's converge in Chicago.",
   "Nov 21–22 in Chicago. See you there!",

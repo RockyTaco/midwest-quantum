@@ -49,4 +49,11 @@ export const CHAPTERS: Chapter[] = [
     monogram: "PNW",
     website: "https://mypnwlife.pnw.edu/quantumleap/home/",
   },
+  {
+    university: "Chicago Women in High Performance Computing",
+    org: "Chicago WHPC Chapter",
+    logo: "/images/whpc_logo.png",
+    monogram: "WHPC",
+    website: "https://www.chicagowhpc.org",
+  },
 ];
