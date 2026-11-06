@@ -11,14 +11,13 @@ export default function Chapters() {
         <ScrollReveal>
           <div className="max-w-2xl">
             <Badge variant="outline" className="mb-4">
-              Organizing chapters
+              Collaborating organizations
             </Badge>
             <h2 className="font-heading text-3xl font-bold tracking-tight">
-              Co-organizing student chapters
+              Organized in collaboration across universities & organizations
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Student quantum organizations from across Illinois, Indiana, and
-              Wisconsin.
+              Bringing together student chapters, university hosts, and regional computing organizations across the Midwest.
             </p>
           </div>
 

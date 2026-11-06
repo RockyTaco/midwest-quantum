@@ -202,14 +202,14 @@ export default function AboutPage() {
             <div className="hero-animate max-w-3xl">
               <div>
                 <Badge variant="accent" className="mb-6">
-                  Student-led initiative
+                  Regional initiative
                 </Badge>
               </div>
               <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
                 About the Midwest Quantum Hackathon
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                MidQWest is organized entirely by student organizations at leading universities across the Midwest. Our mission is to establish a dedicated quantum-focused hackathon for undergraduates in the Midwest, ultimately supporting quantum workforce development initiatives by fostering a collaborative and technically competent community.
+                MidQWest is organized in collaboration with university hosts, academic partners, and student organizations across the Midwest. With student organizers coordinating event logistics and collaborating closely with sponsors on hackathon challenge tracks, our mission is to empower undergraduates and build a lasting Midwest quantum community.
               </p>
             </div>
           </div>
@@ -256,11 +256,11 @@ export default function AboutPage() {
             <ScrollReveal>
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <Badge variant="outline" className="mb-4">
-                    Event Schedule
+                  <Badge variant="accent" className="mb-4">
+                    Tentative Schedule
                   </Badge>
                   <h2 className="font-heading text-3xl font-bold tracking-tight">
-                    Weekend schedule
+                    Weekend schedule <span className="text-muted-foreground text-xl font-normal">(Tentative)</span>
                   </h2>
                   <p className="mt-2 text-muted-foreground">
                     November 21–22, 2026 · University of Illinois Chicago (UIC) Campus
@@ -277,6 +277,16 @@ export default function AboutPage() {
                 </a>
               </div>
 
+              {/* Tentative Callout Banner */}
+              <div className="mt-6 flex items-start gap-3 rounded-xl border border-amber-500/30 bg-amber-500/5 p-4 text-xs text-foreground/90">
+                <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-700 dark:text-amber-300 font-bold text-[11px]">
+                  !
+                </span>
+                <p className="leading-relaxed">
+                  <strong className="font-semibold text-foreground">Tentative working schedule:</strong> All session timings, room assignments, and workshop slots are preliminary and subject to change as sponsor challenges and logistical details are finalized. Refer to the live Google Sheet for real-time updates.
+                </p>
+              </div>
+
               <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
                 {SCHEDULE.map((dayPlan, dayIdx) => (
                   <div
@@ -287,9 +297,14 @@ export default function AboutPage() {
                   >
                     <div className="flex items-center justify-between border-b border-border/60 pb-5">
                       <div>
-                        <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
-                          Day 0{dayIdx + 1}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
+                            Day 0{dayIdx + 1}
+                          </span>
+                          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-heading text-[10px] font-semibold text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+                            Tentative
+                          </span>
+                        </div>
                         <h3 className="mt-1 font-heading text-xl font-bold text-foreground">
                           {dayPlan.day}
                         </h3>
@@ -340,8 +355,8 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <p className="mt-6 text-center text-xs text-muted-foreground/80">
-                All times are in Central Time (CT). Times and locations are tentative and subject to minor adjustments as sponsor workshops are finalized.
+              <p className="mt-6 text-center text-xs font-medium text-amber-700/90 dark:text-amber-400">
+                * All times are in Central Time (CT). This schedule is strictly tentative and subject to change prior to event kickoff.
               </p>
             </ScrollReveal>
           </div>
@@ -352,10 +367,10 @@ export default function AboutPage() {
           <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
-                Organizing chapters
+                Organized in collaboration across universities & organizations
               </h2>
               <p className="mt-3 text-muted-foreground">
-                The student-run chapters co-organizing MidQWest.
+                Student chapters, university partners, and regional computing organizations co-organizing MidQWest.
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

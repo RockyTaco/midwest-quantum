@@ -58,7 +58,7 @@ export default function Hero() {
 
               {/* 3 — Sub-copy */}
               <p className="mt-4 max-w-lg text-[1rem] leading-[1.75] text-muted-foreground">
-                A student-led hackathon co-organized by quantum and computing organizations at{" "}
+                Co-organized across Midwest university hosts, academic sponsors, and computing groups at{" "}
                 <span className="font-medium text-foreground">UIUC</span>,{" "}
                 <span className="font-medium text-foreground">UChicago</span>,{" "}
                 <span className="font-medium text-foreground">Purdue</span>,{" "}
@@ -99,8 +99,8 @@ export default function Hero() {
           {/* 5 — Stats */}
           <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-border/60 pt-6">
             {[
-              { value: "7",    label: "Organizing chapters" },
-              { value: "100%", label: "Student-organized" },
+              { value: "7",    label: "Collaborating orgs" },
+              { value: "100%", label: "Free for students" },
               { value: "3",    label: "Midwest states" },
             ].map((s) => (
               <div key={s.label}>
