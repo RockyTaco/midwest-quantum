@@ -19,9 +19,9 @@ export default function Logo({ className }: LogoProps) {
       <Image
         src="/MQW_light_grad_black.png"
         alt="MidQWest"
-        width={80}
-        height={22}
-        className="h-[22px] w-auto"
+        width={90}
+        height={25}
+        className="h-[25px] w-auto"
         priority
       />
     </Link>

@@ -4,11 +4,12 @@ import { useState } from "react";
 
 const QUOTES = [
   "Think of what the quantum talent of the Midwest could build together!",
+  "Welcome to MidQWest 2026!",
   "You guys should totally apply now!",
   "Sponsoring MidQWest is a pretty smart move.",
-  "Eight organizing groups, one united community.",
+  "Eight organizing groups, one united MidQWest community.",
   "Free for all students. Zero cost, all access.",
-  "Let's converge in Chicago.",
+  "Let's converge in Chicago for MidQWest.",
   "Nov 21–22 in Chicago. See you there!",
   "Am I alive or dead? Only one way to observe!",
   "I was in two boxes at once until you clicked me.",
@@ -31,27 +32,28 @@ export default function MascotBubble() {
   return (
     <div
       onClick={handleClick}
-      className="group relative flex cursor-pointer select-none items-center justify-end gap-3.5 transition-transform active:scale-[0.98]"
+      className="group relative flex cursor-pointer select-none items-center justify-end gap-4 transition-transform active:scale-[0.98]"
       title="Click to cycle thoughts!"
     >
-      {/* Speech Bubble — Basic, clean, wide width */}
+      {/* Speech Bubble — Classic shape from midqwest.dev */}
       <div
-        className={`relative w-[250px] sm:w-[290px] md:w-[310px] shrink-0 rounded-2xl border border-border bg-card px-5 py-3.5 shadow-md transition-all duration-200 ${
+        className={`relative w-[280px] sm:w-[350px] md:w-[380px] shrink-0 rounded-2xl border border-border bg-card px-6 py-4.5 shadow-md transition-all duration-200 ${
           pop ? "scale-95 opacity-75" : "scale-100 opacity-100"
         } group-hover:border-vivid/50 group-hover:shadow-lg`}
       >
-        <p className="text-xs sm:text-[0.875rem] font-medium leading-relaxed text-foreground">
+        <p className="text-[0.9375rem] font-medium leading-relaxed text-foreground md:text-[1rem]">
           &ldquo;{QUOTES[index]}&rdquo;
         </p>
+
         {/* Bubble Tail pointing RIGHT toward the cat */}
-        <div className="absolute -right-2 top-1/2 size-3.5 -translate-y-1/2 rotate-45 border-t border-r border-border bg-card group-hover:border-vivid/50" />
+        <div className="absolute -right-2 top-1/2 size-3.5 -translate-y-1/2 rotate-45 border-t border-r border-border bg-card z-10 group-hover:border-vivid/50" />
       </div>
 
       {/* Cat Mascot — Fixed/Anchored on the right */}
       <img
         src="/cat_blob_atom.png"
         alt="Quantum Cat Mascot"
-        className="w-40 sm:w-48 md:w-56 lg:w-60 xl:w-64 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
+        className="w-44 sm:w-52 md:w-60 lg:w-68 xl:w-72 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
       />
     </div>
   );

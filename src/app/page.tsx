@@ -48,7 +48,7 @@ export default function Home() {
 
         {/* Gateway cards */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-28">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 py-20 md:py-28">
             <ScrollReveal>
               <div className="mb-10">
                 <p className="font-heading text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
@@ -129,7 +129,7 @@ export default function Home() {
             aria-hidden="true"
           />
           <ScrollReveal>
-            <div className="mx-auto w-full max-w-6xl px-6 py-24 md:py-32 text-center">
+            <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 py-24 md:py-32 text-center">
               <p className="font-heading text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
                 November 21–22, 2026 · Chicago, IL
               </p>

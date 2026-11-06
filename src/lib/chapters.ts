@@ -1,6 +1,6 @@
 export interface Chapter {
   university: string;
-  org: string;
+  org?: string;
   /** Path to a logo in /public, if one is available. */
   logo?: string;
   /** Fallback initials shown when no logo file exists. */
@@ -31,8 +31,7 @@ export const CHAPTERS: Chapter[] = [
     website: "https://ucquantum.com",
   },
   {
-    university: "University of Illinois Chicago",
-    org: "UIC Quantum Chapter",
+    university: "UIC Quantum",
     monogram: "UIC",
   },
   {

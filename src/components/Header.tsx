@@ -21,11 +21,11 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex h-[60px] w-full max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-[64px] w-full max-w-7xl items-center justify-between px-6 sm:px-8">
         <Logo />
 
         {/* Desktop nav */}
-        <nav className="hidden h-full items-center gap-1 md:flex">
+        <nav className="hidden h-full items-center gap-1.5 md:flex">
           {NAV_LINKS.map((link) => {
             const active = pathname === link.href;
             return (
@@ -33,7 +33,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "relative flex h-full items-center px-3 text-sm transition-colors",
+                  "relative flex h-full items-center px-3.5 text-[0.9375rem] transition-colors",
                   active
                     ? "font-semibold text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -57,7 +57,7 @@ export default function Header() {
             href={WAITLIST_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[13px] font-semibold text-vivid-foreground transition-all hover:opacity-90"
+            className="inline-flex items-center gap-1.5 rounded-full px-4.5 py-2 text-[13.5px] font-semibold text-vivid-foreground transition-all hover:opacity-90"
             style={{
               background:
                 "linear-gradient(135deg, oklch(0.58 0.24 258) 0%, oklch(0.52 0.22 268) 100%)",

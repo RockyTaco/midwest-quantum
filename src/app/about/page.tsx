@@ -372,9 +372,11 @@ export default function AboutPage() {
                         <h3 className="font-heading text-sm font-semibold leading-snug text-foreground">
                           {chapter.university}
                         </h3>
-                        <p className="mt-0.5 text-xs text-muted-foreground">
-                          {chapter.org}
-                        </p>
+                        {chapter.org && (
+                          <p className="mt-0.5 text-xs text-muted-foreground">
+                            {chapter.org}
+                          </p>
+                        )}
                       </div>
                       {chapter.website && (
                         <ExternalLink className="size-3.5 shrink-0 text-muted-foreground/40 transition-colors group-hover:text-vivid" />
@@ -384,7 +386,7 @@ export default function AboutPage() {
 
                   return chapter.website ? (
                     <a
-                      key={chapter.org}
+                      key={chapter.university}
                       href={chapter.website}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -393,7 +395,7 @@ export default function AboutPage() {
                       {inner}
                     </a>
                   ) : (
-                    <div key={chapter.org}>{inner}</div>
+                    <div key={chapter.university}>{inner}</div>
                   );
                 })}
               </div>
