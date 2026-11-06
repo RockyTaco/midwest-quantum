@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | MidQWest 2026",
   },
   description:
-    "MidQWest is the premier Midwest quantum computing hackathon hosted at UIC Chicago on November 21–22, 2026. Organized with Chicago Women in HPC and student leaders from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison.",
+    "MidQWest is the premier Midwest quantum computing hackathon hosted at UIC Chicago on November 21–22, 2026. Organized with the Chicago Quantum Exchange, Chicago Women in HPC, and student leaders from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison.",
   applicationName: "MidQWest",
   authors: [{ name: "MidQWest Organizing Team", url: "https://midqwest.dev" }],
   generator: "Next.js",
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     "quantum computing hackathon",
     "Chicago quantum hackathon",
     "student quantum hackathon",
+    "Chicago Quantum Exchange",
+    "CQE",
     "Chicago Women in High Performance Computing",
     "Chicago WHPC",
     "Purdue quantum",

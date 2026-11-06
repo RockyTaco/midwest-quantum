@@ -56,4 +56,11 @@ export const CHAPTERS: Chapter[] = [
     monogram: "WHPC",
     website: "https://www.chicagowhpc.org",
   },
+  {
+    university: "Chicago Quantum Exchange",
+    org: "Regional Quantum Hub (CQE)",
+    logo: "/images/cqe_logo.png",
+    monogram: "CQE",
+    website: "https://chicagoquantum.org",
+  },
 ];

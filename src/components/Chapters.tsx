@@ -21,26 +21,23 @@ export default function Chapters() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {CHAPTERS.map((chapter, i) => {
-              const isLast = i === CHAPTERS.length - 1;
               const inner = (
                 <div
                   data-reveal
                   data-reveal-delay={String(Math.min(i + 1, 6)) as "1"|"2"|"3"|"4"|"5"|"6"}
-                  className={`group flex h-full items-center gap-4 bg-card p-6 transition-colors hover:bg-muted/20 card-lift ${
-                    isLast ? "justify-start sm:justify-center" : ""
-                  }`}
+                  className="group flex h-full items-center gap-3.5 bg-card p-5 sm:p-6 transition-colors hover:bg-muted/20 card-lift"
                 >
-                  <ChapterLogo chapter={chapter} />
-                  <div className={isLast ? "min-w-0 flex-1 sm:flex-initial" : "min-w-0 flex-1"}>
+                  <ChapterLogo chapter={chapter} size={42} />
+                  <div className="min-w-0 flex-1">
                     <h3 className="font-heading text-sm font-bold leading-snug text-foreground">
                       {chapter.university}
                     </h3>
                     <p className="mt-0.5 text-xs text-muted-foreground">{chapter.org}</p>
                   </div>
                   {chapter.website && (
-                    <ExternalLink className="size-4 shrink-0 text-muted-foreground/40 transition-colors group-hover:text-vivid" />
+                    <ExternalLink className="size-3.5 shrink-0 text-muted-foreground/40 transition-colors group-hover:text-vivid" />
                   )}
                 </div>
               );
@@ -51,17 +48,12 @@ export default function Chapters() {
                   href={chapter.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`block ${isLast ? "sm:col-span-2 lg:col-span-3" : ""}`}
+                  className="block"
                 >
                   {inner}
                 </a>
               ) : (
-                <div
-                  key={chapter.org}
-                  className={isLast ? "sm:col-span-2 lg:col-span-3" : ""}
-                >
-                  {inner}
-                </div>
+                <div key={chapter.org}>{inner}</div>
               );
             })}
           </div>
