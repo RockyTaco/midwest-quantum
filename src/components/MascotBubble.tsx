@@ -6,7 +6,7 @@ const QUOTES = [
   "Think of what the quantum talent of the Midwest could build together!",
   "You guys should totally apply now!",
   "Sponsoring MidQWest is a pretty smart move.",
-  "Seven organizing chapters, one united community.",
+  "Seven organizing groups, one united community.",
   "Free for all students. Zero cost, all access.",
   "Let's converge in Chicago.",
   "Nov 21–22 in Chicago. See you there!",
@@ -36,11 +36,11 @@ export default function MascotBubble() {
     >
       {/* Speech Bubble — Basic, clean, no tags/counter, wide width */}
       <div
-        className={`relative w-[260px] sm:w-[330px] shrink-0 rounded-2xl border border-border bg-card px-6 py-4 shadow-md transition-all duration-200 ${
+        className={`relative w-[280px] sm:w-[350px] md:w-[380px] shrink-0 rounded-2xl border border-border bg-card px-6 py-4.5 shadow-md transition-all duration-200 ${
           pop ? "scale-95 opacity-75" : "scale-100 opacity-100"
         } group-hover:border-vivid/50 group-hover:shadow-lg`}
       >
-        <p className="text-sm font-medium leading-relaxed text-foreground">
+        <p className="text-[0.9375rem] font-medium leading-relaxed text-foreground md:text-[1rem]">
           &ldquo;{QUOTES[index]}&rdquo;
         </p>
         {/*
@@ -56,7 +56,7 @@ export default function MascotBubble() {
       <img
         src="/cat_blob_atom.png"
         alt="Quantum Cat Mascot"
-        className="w-44 sm:w-52 md:w-60 lg:w-64 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
+        className="w-48 sm:w-56 md:w-68 lg:w-76 xl:w-80 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
       />
     </div>
   );

@@ -17,20 +17,23 @@ export default function Chapters() {
               Organized in collaboration across universities & organizations
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Bringing together student chapters, university hosts, and regional computing organizations across the Midwest.
+              Bringing together quantum groups, university hosts, and regional organizations across the Midwest.
             </p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {CHAPTERS.map((chapter, i) => {
+              const isLast = i === CHAPTERS.length - 1;
               const inner = (
                 <div
                   data-reveal
                   data-reveal-delay={String(Math.min(i + 1, 6)) as "1"|"2"|"3"|"4"|"5"|"6"}
-                  className="group flex h-full items-center gap-4 bg-card p-6 transition-colors hover:bg-muted/20 card-lift"
+                  className={`group flex h-full items-center gap-4 bg-card p-6 transition-colors hover:bg-muted/20 card-lift ${
+                    isLast ? "justify-start sm:justify-center" : ""
+                  }`}
                 >
                   <ChapterLogo chapter={chapter} />
-                  <div className="min-w-0 flex-1">
+                  <div className={isLast ? "min-w-0 flex-1 sm:flex-initial" : "min-w-0 flex-1"}>
                     <h3 className="font-heading text-sm font-bold leading-snug text-foreground">
                       {chapter.university}
                     </h3>
@@ -48,12 +51,17 @@ export default function Chapters() {
                   href={chapter.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block"
+                  className={`block ${isLast ? "sm:col-span-2 lg:col-span-3" : ""}`}
                 >
                   {inner}
                 </a>
               ) : (
-                <div key={chapter.org}>{inner}</div>
+                <div
+                  key={chapter.org}
+                  className={isLast ? "sm:col-span-2 lg:col-span-3" : ""}
+                >
+                  {inner}
+                </div>
               );
             })}
           </div>

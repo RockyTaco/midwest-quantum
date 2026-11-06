@@ -57,7 +57,7 @@ export default function JsonLd() {
         ],
         "organizer": {
           "@type": "Organization",
-          "name": "MidQWest Organizing Chapters",
+          "name": "MidQWest Organizers",
           "url": "https://midqwest.dev"
         },
         "offers": {

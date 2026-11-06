@@ -11,20 +11,20 @@ import { CHAPTERS } from "@/lib/chapters";
 export const metadata: Metadata = {
   title: "About the Hackathon",
   description:
-    "Learn about MidQWest 2026, the mission to empower Midwest quantum talent, co-organizing university chapters, event structure, and FAQs.",
+    "Learn about MidQWest 2026, the mission to empower Midwest quantum talent, co-organizing quantum groups, event structure, and FAQs.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Learn about the mission, organizing student chapters from UIUC, UChicago, Purdue, Purdue Northwest, UIC, and UW-Madison, and FAQs for MidQWest 2026.",
+      "Learn about the mission, organizing quantum groups from UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, UIC, and Chicago WHPC, and FAQs for MidQWest 2026.",
     url: "/about",
   },
   twitter: {
     title: "About MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Learn about the mission, organizing student chapters, and event structure for MidQWest 2026.",
+      "Learn about the mission, organizing quantum groups, and event structure for MidQWest 2026.",
   },
 };
 
@@ -77,9 +77,6 @@ const FAQ = [
     a: "If your school has a quantum computing student organization and you want to co-organize or bring a delegation, reach out. We are actively expanding.",
   },
 ];
-
-const SCHEDULE_SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/18AGlF_M6t0e0tSnmxXtlBA2Jgs4QvOJa0xNsMgAiVAU/edit?usp=sharing";
 
 interface ScheduleEvent {
   time: string;
@@ -254,27 +251,16 @@ export default function AboutPage() {
         <section className="border-b border-border/60">
           <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
             <ScrollReveal>
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <Badge variant="accent" className="mb-4">
-                    Tentative Schedule
-                  </Badge>
-                  <h2 className="font-heading text-3xl font-bold tracking-tight">
-                    Weekend schedule <span className="text-muted-foreground text-xl font-normal">(Tentative)</span>
-                  </h2>
-                  <p className="mt-2 text-muted-foreground">
-                    November 21–22, 2026 · University of Illinois Chicago (UIC) Campus
-                  </p>
-                </div>
-                <a
-                  href={SCHEDULE_SHEET_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 self-start text-xs font-semibold text-vivid transition-opacity hover:opacity-80 sm:self-auto"
-                >
-                  View live schedule in Google Sheets
-                  <ExternalLink className="size-3.5" />
-                </a>
+              <div>
+                <Badge variant="accent" className="mb-4">
+                  Tentative Schedule
+                </Badge>
+                <h2 className="font-heading text-3xl font-bold tracking-tight">
+                  Weekend schedule <span className="text-muted-foreground text-xl font-normal">(Tentative)</span>
+                </h2>
+                <p className="mt-2 text-muted-foreground">
+                  November 21–22, 2026 · University of Illinois Chicago (UIC) Campus
+                </p>
               </div>
 
               {/* Tentative Callout Banner */}
@@ -283,7 +269,7 @@ export default function AboutPage() {
                   !
                 </span>
                 <p className="leading-relaxed">
-                  <strong className="font-semibold text-foreground">Tentative working schedule:</strong> All session timings, room assignments, and workshop slots are preliminary and subject to change as sponsor challenges and logistical details are finalized. Refer to the live Google Sheet for real-time updates.
+                  <strong className="font-semibold text-foreground">Tentative working schedule:</strong> All session timings, room assignments, and workshop slots are preliminary and subject to refinement as sponsor challenges and logistical details are finalized closer to the event.
                 </p>
               </div>
 
@@ -370,19 +356,22 @@ export default function AboutPage() {
                 Organized in collaboration across universities & organizations
               </h2>
               <p className="mt-3 text-muted-foreground">
-                Student chapters, university partners, and regional computing organizations co-organizing MidQWest.
+                Quantum groups, university hosts, and regional organizations co-organizing MidQWest.
               </p>
 
               <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
                 {CHAPTERS.map((chapter, i) => {
+                  const isLast = i === CHAPTERS.length - 1;
                   const inner = (
                     <div
                       data-reveal
                       data-reveal-delay={String(Math.min(i + 1, 6)) as "1"|"2"|"3"|"4"|"5"|"6"}
-                      className="group flex h-full items-center gap-4 bg-card p-6 transition-colors hover:bg-muted/40 card-lift"
+                      className={`group flex h-full items-center gap-4 bg-card p-6 transition-colors hover:bg-muted/40 card-lift ${
+                        isLast ? "justify-start sm:justify-center" : ""
+                      }`}
                     >
                       <ChapterLogo chapter={chapter} size={44} />
-                      <div className="min-w-0 flex-1">
+                      <div className={isLast ? "min-w-0 flex-1 sm:flex-initial" : "min-w-0 flex-1"}>
                         <h3 className="font-heading text-sm font-semibold leading-snug text-foreground">
                           {chapter.university}
                         </h3>
@@ -402,12 +391,17 @@ export default function AboutPage() {
                       href={chapter.website}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block"
+                      className={`block ${isLast ? "sm:col-span-2 lg:col-span-3" : ""}`}
                     >
                       {inner}
                     </a>
                   ) : (
-                    <div key={chapter.org}>{inner}</div>
+                    <div
+                      key={chapter.org}
+                      className={isLast ? "sm:col-span-2 lg:col-span-3" : ""}
+                    >
+                      {inner}
+                    </div>
                   );
                 })}
               </div>

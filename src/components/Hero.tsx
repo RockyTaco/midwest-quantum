@@ -20,11 +20,11 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto w-full max-w-6xl px-6 py-10 md:py-14">
+      <div className="mx-auto w-full max-w-6xl px-6 py-14 md:py-20 lg:py-24">
         <div className="hero-animate">
-          <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_auto]">
             {/* Left Column — Text content */}
-            <div className="max-w-[560px]">
+            <div className="max-w-[600px]">
               {/* 1 — Badge */}
               <div>
                 <Badge
@@ -36,8 +36,8 @@ export default function Hero() {
               </div>
 
               {/* 2 — Headline */}
-              <h1 className="mt-4 font-heading text-[clamp(2.4rem,5.2vw,4.25rem)] font-bold leading-[1.04] tracking-[-0.02em]">
-                <span className="block text-[11px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/80 mb-1 ml-1">
+              <h1 className="mt-5 font-heading text-[clamp(2.75rem,5.6vw,4.75rem)] font-bold leading-[1.04] tracking-[-0.025em]">
+                <span className="block text-[12px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/80 mb-1 ml-1">
                   THE
                 </span>
                 Midwest{" "}
@@ -57,8 +57,8 @@ export default function Hero() {
               </h1>
 
               {/* 3 — Sub-copy */}
-              <p className="mt-4 max-w-lg text-[1rem] leading-[1.75] text-muted-foreground">
-                Co-organized across Midwest university hosts, academic sponsors, and computing groups at{" "}
+              <p className="mt-5 max-w-xl text-[1.0625rem] leading-[1.75] text-muted-foreground md:text-[1.125rem]">
+                Co-organized by quantum groups at{" "}
                 <span className="font-medium text-foreground">UIUC</span>,{" "}
                 <span className="font-medium text-foreground">UChicago</span>,{" "}
                 <span className="font-medium text-foreground">Purdue</span>,{" "}
@@ -69,12 +69,12 @@ export default function Hero() {
               </p>
 
               {/* 4 — CTAs */}
-              <div className="mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3.5">
                 <a
                   href={WAITLIST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-vivid-foreground transition-all"
+                  className="group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-semibold text-vivid-foreground transition-all"
                   style={{
                     background:
                       "linear-gradient(135deg, oklch(0.58 0.24 258) 0%, oklch(0.52 0.22 268) 100%)",
@@ -84,7 +84,7 @@ export default function Hero() {
                   Apply now!
                   <ArrowRight className="size-4 transition-transform duration-150 group-hover:translate-x-0.5" />
                 </a>
-                <Button asChild size="lg" variant="outline" className="rounded-full">
+                <Button asChild size="lg" variant="outline" className="rounded-full px-6 text-[0.95rem]">
                   <Link href="/about">Learn more</Link>
                 </Button>
               </div>
@@ -97,7 +97,7 @@ export default function Hero() {
           </div>
 
           {/* 5 — Stats */}
-          <dl className="mt-8 flex flex-wrap gap-x-12 gap-y-4 border-t border-border/60 pt-6">
+          <dl className="mt-12 flex flex-wrap gap-x-14 gap-y-4 border-t border-border/60 pt-8">
             {[
               { value: "7",    label: "Collaborating orgs" },
               { value: "100%", label: "Free for students" },
@@ -105,7 +105,7 @@ export default function Hero() {
             ].map((s) => (
               <div key={s.label}>
                 <dt
-                  className="font-heading text-[1.85rem] font-bold tabular-nums leading-none"
+                  className="font-heading text-[2.25rem] font-bold tabular-nums leading-none md:text-[2.6rem]"
                   style={{
                     background:
                       "linear-gradient(135deg, oklch(0.58 0.24 258) 0%, oklch(0.70 0.18 240) 100%)",
@@ -116,7 +116,7 @@ export default function Hero() {
                 >
                   {s.value}
                 </dt>
-                <dd className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <dd className="mt-1.5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                   {s.label}
                 </dd>
               </div>
