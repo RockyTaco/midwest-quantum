@@ -37,7 +37,7 @@ export default function MascotBubble() {
     >
       {/* Speech Bubble — Classic shape from midqwest.dev */}
       <div
-        className={`relative w-[280px] sm:w-[350px] md:w-[380px] shrink-0 rounded-2xl border border-border bg-card px-6 py-4.5 shadow-md transition-all duration-200 ${
+        className={`relative w-[280px] sm:w-[340px] lg:w-[320px] xl:w-[380px] shrink-0 rounded-2xl border border-border bg-card px-5 py-4 lg:px-6 lg:py-4.5 shadow-md transition-all duration-200 ${
           pop ? "scale-95 opacity-75" : "scale-100 opacity-100"
         } group-hover:border-vivid/50 group-hover:shadow-lg`}
       >
@@ -53,7 +53,7 @@ export default function MascotBubble() {
       <img
         src="/cat_blob_atom.png"
         alt="Quantum Cat Mascot"
-        className="w-44 sm:w-52 md:w-60 lg:w-68 xl:w-72 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
+        className="w-44 sm:w-52 md:w-56 lg:w-60 xl:w-72 shrink-0 object-contain pointer-events-none transition-transform duration-200 group-hover:scale-[1.02]"
       />
     </div>
   );

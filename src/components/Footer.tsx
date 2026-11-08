@@ -12,7 +12,7 @@ const NAV = [
 export default function Footer() {
   return (
     <footer className="border-t border-border/60">
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 py-12">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           {/* Brand */}
           <div>

@@ -169,7 +169,7 @@ export default function SponsorPage() {
       <main>
         {/* Hero */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <div className="hero-animate max-w-3xl">
               <div>
                 <Badge variant="accent" className="mb-6">
@@ -200,7 +200,7 @@ export default function SponsorPage() {
 
         {/* Package */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div data-reveal className="max-w-2xl">
                 <h2 className="font-heading text-3xl font-bold tracking-tight">
@@ -281,7 +281,7 @@ export default function SponsorPage() {
 
         {/* Budget */}
         <section>
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
                 Where funding goes

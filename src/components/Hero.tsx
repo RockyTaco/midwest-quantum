@@ -20,28 +20,28 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 sm:px-8 py-2 sm:py-3 lg:py-3.5">
+      <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 sm:px-8 lg:px-10 xl:px-12 py-2 sm:py-3 lg:py-3.5">
         <div className="hero-animate my-auto">
           <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
             {/* Left Column — Text content scaled 1.1x */}
-            <div className="max-w-[580px] lg:max-w-[620px]">
+            <div className="min-w-0 max-w-[580px] lg:max-w-[620px]">
               {/* 1 — Badge */}
               <div>
                 <Badge
                   variant="accent"
-                  className="px-4 py-1.5 text-xs font-semibold uppercase tracking-widest"
+                  className="max-w-full px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-widest"
                 >
-                  <span className="font-heading font-bold text-vivid mr-1.5">MidQWest</span>
-                  · November 21–22, 2026 · Chicago, IL
+                  <span className="hidden sm:inline font-heading font-bold text-vivid mr-1.5">MidQWest ·</span>
+                  November 21–22, 2026 · Chicago, IL
                 </Badge>
               </div>
 
               {/* 2 — Headline: 1.1x Larger, Bold & Commanding */}
-              <h1 className="mt-3 font-heading text-[clamp(2.8rem,5.5vw,4.65rem)] font-bold leading-[1.04] tracking-[-0.025em]">
+              <h1 className="mt-3 font-heading text-[clamp(2.35rem,5.5vw,4.65rem)] font-bold leading-[1.04] tracking-[-0.025em]">
                 <span className="block text-[13px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/80 mb-0.5 ml-1">
                   THE
                 </span>
-                Midwest{" "}
+                Midwest <br className="sm:hidden" />
                 <span
                   style={{
                     background:

@@ -7,7 +7,7 @@ import { CHAPTERS } from "@/lib/chapters";
 export default function Chapters() {
   return (
     <section className="border-b border-border/60">
-      <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 py-20 md:py-28">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-28">
         <ScrollReveal>
           <div className="max-w-3xl">
             <Badge variant="outline" className="mb-4 px-3.5 py-1 text-xs">

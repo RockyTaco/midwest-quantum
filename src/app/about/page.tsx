@@ -11,20 +11,47 @@ import { CHAPTERS } from "@/lib/chapters";
 export const metadata: Metadata = {
   title: "About the Hackathon",
   description:
-    "Learn about MidQWest 2026, the mission to empower Midwest quantum talent, co-organizing quantum groups, event structure, and FAQs.",
+    "Learn about MidQWest 2026, the premier student-led Midwest quantum hackathon at UIC Chicago. Discover our mission, 150–200 student builders, schedule, and FAQs.",
+  keywords: [
+    "About MidQWest",
+    "Midwest Quantum Hackathon schedule",
+    "UIC quantum hackathon location",
+    "quantum quests hackathon",
+    "Year of Illinois Quantum event",
+    "150-200 student builders",
+    "Midwest quantum student organizations",
+    "UIUC UChicago Purdue UIC UW-Madison quantum",
+    "collegiate quantum hackathon mission",
+    "quantum hackathon FAQs",
+  ],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: "About MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Learn about the mission, organizing quantum groups from UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, UIC, Chicago WHPC, and Chicago Quantum Exchange, and FAQs for MidQWest 2026.",
-    url: "/about",
+      "MidQWest is a premier student-led quantum hackathon at UIC Chicago uniting 150–200 builders from top Midwest universities to solve quantum quests.",
+    url: "https://midqwest.dev/about",
+    siteName: "MidQWest",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-image-v2.png",
+        width: 1200,
+        height: 630,
+        type: "image/png",
+        alt: "About MidQWest 2026 — Midwest Quantum Hackathon",
+      },
+    ],
   },
   twitter: {
+    card: "summary_large_image",
     title: "About MidQWest 2026 — Midwest Quantum Hackathon",
     description:
-      "Learn about the mission, organizing quantum groups, and event structure for MidQWest 2026.",
+      "MidQWest unites 150–200 student builders from top Midwest universities to solve quantum quests at UIC.",
+    images: ["https://midqwest.dev/og-image-v2.png"],
+    creator: "@midqwest",
   },
 };
 
@@ -54,7 +81,7 @@ const EXPECT = [
 const FAQ = [
   {
     q: "When is MidQWest?",
-    a: "November 21–22, 2026 in Chicago. Register to receive venue details, schedule information, and logistics updates.",
+    a: "November 21–22, 2026 in Chicago (weekend of November 20–22). Check-in and opening events begin Saturday morning, with 24 hours of hacking followed by project demos and awards Sunday afternoon.",
   },
   {
     q: "Where will it be held?",
@@ -62,7 +89,11 @@ const FAQ = [
   },
   {
     q: "Who can participate?",
-    a: "Any undergraduate or graduate student at a Midwest university. No prior quantum experience required; dedicated workshops cover key fundamentals.",
+    a: "150–200 undergraduate and graduate students from universities across the Midwest studying CS, Physics, Engineering, and related fields. No prior quantum computing experience is required — crash courses and mentors are provided.",
+  },
+  {
+    q: "What are 'Quests'?",
+    a: "Quests are sponsor- and organizer-designed hackathon challenge tracks spanning quantum algorithms, error correction, quantum machine learning, simulation, and pulse engineering.",
   },
   {
     q: "Is there a cost?",
@@ -70,11 +101,11 @@ const FAQ = [
   },
   {
     q: "How are teams formed?",
-    a: "Register with a team or join our team-matching sessions at the event. Solo hackers are welcome.",
+    a: "Students work in teams of 3–5 to tackle challenge quests. You can register with a team or join our team-matching sessions on Discord and on-site at the event. Solo builders are warmly welcomed!",
   },
   {
-    q: "Want your university involved?",
-    a: "If your school has a quantum computing student organization and you want to co-organize or bring a delegation, reach out. We are actively expanding.",
+    q: "Want your university or company involved?",
+    a: "If your university quantum club wants to bring a student delegation, or your company wants to sponsor challenge tracks and recruit talent, reach out to our organizing team.",
   },
 ];
 
@@ -189,32 +220,165 @@ const SCHEDULE: ScheduleDay[] = [
 ];
 
 export default function AboutPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQ.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://midqwest.dev",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: "https://midqwest.dev/about",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main>
         {/* Hero */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <div className="hero-animate max-w-3xl">
               <div>
                 <Badge variant="accent" className="mb-6">
-                  Regional initiative
+                  Student-Led Regional Initiative
                 </Badge>
               </div>
-              <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
+              <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl lg:text-[3.25rem] leading-[1.1]">
                 About the Midwest Quantum Hackathon
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                MidQWest is organized in collaboration with university hosts, academic partners, and student organizations across the Midwest. With student organizers coordinating event logistics and collaborating closely with sponsors on hackathon challenge tracks, our mission is to empower undergraduates and build a lasting Midwest quantum community.
+              <p className="mt-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
+                The Midwest Quantum Hackathon, or <strong className="font-semibold text-foreground">MidQWest</strong> for short, is a premier student-led initiative targeting quantum workforce development in Chicago and the broader Midwest as the region pushes to become a leading hub for quantum technologies.
+              </p>
+              <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground">
+                Hosted at the University of Illinois Chicago (UIC) campus over the weekend of November 20–22, 2026, MidQWest will follow a hackathon format where 150–200 students collaborate in teams to apply quantum information science and engineering to solve challenges called &ldquo;quests.&rdquo;
               </p>
             </div>
           </div>
         </section>
 
+        {/* Mission & Purpose Pillars */}
+        <section className="border-b border-border/60 bg-muted/20">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
+            <ScrollReveal>
+              <div className="max-w-3xl">
+                <Badge variant="outline" className="mb-4 px-3.5 py-1 text-xs">
+                  Our Mission
+                </Badge>
+                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                  Empowering the next generation of quantum talent
+                </h2>
+                <p className="mt-3 text-base md:text-lg text-muted-foreground">
+                  Inspired by nationally recognized collegiate quantum hackathons like MIT’s iQuHACK and Yale’s YQuantum, MidQWest was founded to fulfill three critical goals:
+                </p>
+              </div>
+
+              <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+                {/* Pillar 1 */}
+                <div className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:border-vivid/40 card-lift">
+                  <span className="font-heading text-xs font-semibold uppercase tracking-widest text-vivid">
+                    01 · Regional Ecosystem
+                  </span>
+                  <h3 className="mt-3 font-heading text-lg font-bold text-foreground">
+                    A Central Gathering Point
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                    Fill a critical gap in the current academic and professional ecosystem, establishing a dedicated central venue for Midwest students to connect, collaborate, and compete.
+                  </p>
+                </div>
+
+                {/* Pillar 2 */}
+                <div className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:border-vivid/40 card-lift">
+                  <span className="font-heading text-xs font-semibold uppercase tracking-widest text-vivid">
+                    02 · Regional Momentum
+                  </span>
+                  <h3 className="mt-3 font-heading text-lg font-bold text-foreground">
+                    Celebrate Illinois Quantum
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                    Celebrate the &ldquo;Year of Illinois Quantum,&rdquo; aligning directly with state, regional, and national initiatives to advance quantum science and technology leadership.
+                  </p>
+                </div>
+
+                {/* Pillar 3 */}
+                <div className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm transition-all hover:border-vivid/40 card-lift">
+                  <span className="font-heading text-xs font-semibold uppercase tracking-widest text-vivid">
+                    03 · Workforce Acceleration
+                  </span>
+                  <h3 className="mt-3 font-heading text-lg font-bold text-foreground">
+                    Career & Skill Development
+                  </h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                    Enable workforce development across the Midwest by accelerating technical skills, cultivating competitive project portfolios, and forging enduring peer networks.
+                  </p>
+                </div>
+              </div>
+
+              {/* Recruitment & Industry Callout */}
+              <div className="mt-8 rounded-2xl border border-vivid/20 bg-gradient-to-r from-vivid/[0.04] via-card to-vivid/[0.02] p-7 md:p-8">
+                <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                  <div className="max-w-2xl">
+                    <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
+                      Top-Tier Midwest Talent
+                    </span>
+                    <h3 className="mt-1 font-heading text-xl font-bold text-foreground">
+                      Where Industry Connects with Future Quantum Leaders
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      Organized in collaboration with the region’s top student quantum organizations, MidQWest brings together students from top-10 programs in Engineering, Physics, and Computer Science. The event serves as an ideal venue for companies and national labs to mentor builders and recruit for interns, co-ops, and full-time roles during the peak November hiring season.
+                    </p>
+                  </div>
+                  <div className="shrink-0">
+                    <a
+                      href="/sponsor"
+                      className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold text-vivid-foreground transition-all hover:opacity-90"
+                      style={{
+                        background:
+                          "linear-gradient(135deg, oklch(0.58 0.24 258) 0%, oklch(0.52 0.22 268) 100%)",
+                        boxShadow: "0 2px 12px oklch(0.58 0.24 258 / 0.25)",
+                      }}
+                    >
+                      Sponsor & Recruit
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* What to expect */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
                 What to expect
@@ -249,7 +413,7 @@ export default function AboutPage() {
 
         {/* Schedule */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div>
                 <Badge variant="accent" className="mb-4">
@@ -350,7 +514,7 @@ export default function AboutPage() {
 
         {/* Organizing chapters */}
         <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
                 Organized in collaboration across universities & organizations
@@ -405,7 +569,7 @@ export default function AboutPage() {
 
         {/* FAQs */}
         <section>
-          <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-24">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <h2 className="font-heading text-3xl font-bold tracking-tight">
                 FAQs
