@@ -129,47 +129,59 @@ const SCHEDULE: ScheduleDay[] = [
     date: "November 21, 2026",
     events: [
       {
-        time: "8:00 AM – 9:30 AM",
-        activity: "Registration & Sponsor Tabling",
-        location: "Fort Dearborn A & IL C",
-        details: "Participant check-in, nametags, and initial networking with sponsors.",
+        time: "8:00 AM – 9:15 AM",
+        activity: "Registration & Check-In",
+        location: "Fort Dearborn A",
+        details: "Participant check-in, attendance logging, and nametag distribution.",
       },
       {
-        time: "9:00 AM – 9:30 AM",
+        time: "8:00 AM – 9:00 AM",
+        activity: "Sponsor Tabling & Early Networking",
+        location: "IL C",
+        details: "Early opportunity to meet company representatives and mentors at sponsor tables.",
+      },
+      {
+        time: "9:00 AM – 9:15 AM",
         activity: "Opening Remarks",
         location: "IL AB",
-        details: "Official welcome address from the MidQWest student organizers.",
+        details: "Official welcome address from the MidQWest student organizing team.",
+      },
+      {
+        time: "9:15 AM – 9:30 AM",
+        activity: "Challenge Tracks & Team Rosters",
+        location: "IL AB",
+        details: "Overview of quest tracks and live team assignment release via QR code / spreadsheet.",
       },
       {
         time: "9:30 AM – 12:00 PM",
         activity: "Sponsor Talks & Tech Workshops",
         location: "IL AB",
-        details: "Technical deep-dives, challenge prep, and Q&A sessions.",
+        details: "Technical deep-dives, developer tooling walkthroughs, and challenge prep sessions.",
       },
       {
         time: "12:00 PM – 1:15 PM",
-        activity: "Catered Lunch",
+        activity: "Lunch (UIC Catering)",
         location: "Fort Dearborn A",
-        details: "Lunch provided for all participating students and mentors.",
+        details: "Catered lunch for all participants. (1:15 PM is the hard deadline to confirm team rosters).",
       },
       {
         time: "1:15 PM – 2:00 PM",
-        activity: "Hackathon Challenges & 'Quests' Released",
+        activity: "Hackathon Challenges & Instructions Officially Released",
         location: "IL AB",
-        details: "Official challenge tracks and problem statements presented by sponsors and organizers.",
+        details: "Sponsors and organizers officially reveal quest prompts and grading criteria. Teams assemble together.",
       },
       {
         time: "2:00 PM",
-        activity: "Hackathon Work Time Starts!",
-        location: "IL AB & Breakout Spaces",
-        details: "24-hour hack sprint officially begins — teams start hacking!",
+        activity: "Hackathon Work Time Starts! (24 Hours)",
+        location: "IL AB & Hacker Spaces",
+        details: "The 24-hour hacking sprint begins! Student teams spread out to build. Overnight support on Discord.",
         highlight: true,
       },
       {
         time: "5:00 PM – 6:00 PM",
-        activity: "Social Break & Mentor Networking",
-        location: "Venue Space",
-        details: "Mid-day break to connect with company reps and mentors.",
+        activity: "Social Break & Networking",
+        location: "Main Concourse",
+        details: "Mid-day break to connect with companies, mentors, and fellow builders.",
       },
     ],
   },
@@ -178,42 +190,48 @@ const SCHEDULE: ScheduleDay[] = [
     date: "November 22, 2026",
     events: [
       {
-        time: "Morning (Pre-2:00 PM)",
+        time: "12:00 PM – 1:30 PM",
         activity: "Food Trucks (Brunch / Lunch)",
-        location: "Outside / Patio",
-        details: "On-site food trucks to keep builders fueled through the final stretch.",
+        location: "Outside",
+        details: "On-site food trucks to keep hackers fueled for the final stretch.",
       },
       {
         time: "2:00 PM",
         activity: "Hackathon Work Time Ends!",
         location: "IL AB",
-        details: "24 hours end — all project submissions and presentations due.",
+        details: "24-hour timer concludes — all code, repositories, and project submissions due.",
         highlight: true,
       },
       {
         time: "2:00 PM – 4:00 PM",
         activity: "Project Demos & Judging",
         location: "Dearborn B",
-        details: "Teams present their work to academic and industry judges evaluated against rubrics.",
+        details: "Student teams present challenge solutions to sponsors and judges. Each project evaluated against the rubric by multiple reviewers.",
       },
       {
-        time: "2:00 PM – 4:00 PM",
-        activity: "Professional Networking",
-        location: "Exhibition Areas",
-        details: "Students talk with sponsors, share resumes, and showcase hackathon work.",
-      },
-      {
-        time: "5:00 PM",
-        activity: "Awards Ceremony & Winners Announced",
+        time: "4:00 PM – 4:30 PM",
+        activity: "Closing Remarks & Announce Winners",
         location: "IL AB",
-        details: "Recognition, prizes, and grants announced for winning teams.",
+        details: "Award ceremony, category winners revealed, and prize announcements.",
         highlight: true,
       },
       {
-        time: "6:00 PM",
-        activity: "Event Conclusion",
-        location: "Venue Space",
-        details: "Closing remarks, final photos, and farewells.",
+        time: "4:30 PM – 5:00 PM",
+        activity: "Sponsor Tabling Wrap-Up & Farewell",
+        location: "IL C & Concourse",
+        details: "Final networking with company representatives, team photos, and farewells.",
+      },
+      {
+        time: "5:00 PM",
+        activity: "Hackathon Concludes",
+        location: "UIC Campus",
+        details: "MidQWest 2026 officially concludes.",
+      },
+      {
+        time: "5:30 PM",
+        activity: "Venue Clean-Up",
+        location: "UIC Campus",
+        details: "Organizing team and volunteer tear-down.",
       },
     ],
   },
@@ -433,7 +451,7 @@ export default function AboutPage() {
                   !
                 </span>
                 <p className="leading-relaxed">
-                  <strong className="font-semibold text-foreground">Tentative working schedule:</strong> All session timings, room assignments, and workshop slots are preliminary and subject to refinement as sponsor challenges and logistical details are finalized closer to the event.
+                  <strong className="font-semibold text-foreground">Working schedule:</strong> All session timings, room assignments, and workshop slots are subject to minor adjustments as sponsor challenges and logistics are finalized. All official day-of announcements, room directions, and mentor support channels will be communicated live through Discord.
                 </p>
               </div>
 
