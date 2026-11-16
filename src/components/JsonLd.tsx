@@ -32,6 +32,8 @@ export default function JsonLd() {
           "height": 512
         },
         "sameAs": [
+          "https://www.instagram.com/midqwest",
+          "https://www.linkedin.com/company/midqwest",
           "https://sigquantum.com",
           "https://qsopurdue.org",
           "https://ucquantum.com",

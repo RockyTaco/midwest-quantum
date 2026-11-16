@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import { WAITLIST_URL } from "@/lib/links";
+import { WAITLIST_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
 import Logo from "@/components/Logo";
+import { InstagramIcon, LinkedinIcon } from "@/components/SocialIcons";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -21,28 +22,72 @@ export default function Footer() {
               MidQWest — Midwest Quantum Hackathon<br />
               November 21–22, 2026 · Chicago, IL
             </p>
+            {/* Social links */}
+            <div className="mt-4 flex items-center gap-2">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-8 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-border hover:bg-muted hover:text-foreground"
+                aria-label="MidQWest on Instagram"
+              >
+                <InstagramIcon className="size-4" />
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex size-8 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-border hover:bg-muted hover:text-foreground"
+                aria-label="MidQWest on LinkedIn"
+              >
+                <LinkedinIcon className="size-4" />
+              </a>
+            </div>
           </div>
 
           {/* Nav */}
-          <nav className="flex flex-wrap gap-x-6 gap-y-2">
-            {NAV.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+          <div className="flex flex-col gap-3 sm:items-end">
+            <nav className="flex flex-wrap gap-x-6 gap-y-2">
+              {NAV.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href={WAITLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href={WAITLIST_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Apply now!
-            </a>
-          </nav>
+                Apply now!
+              </a>
+            </nav>
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+              >
+                <InstagramIcon className="size-3.5" />
+                <span>Instagram</span>
+              </a>
+              <span className="text-border">·</span>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
+              >
+                <LinkedinIcon className="size-3.5" />
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="mt-10 flex flex-col gap-2 border-t border-border/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
