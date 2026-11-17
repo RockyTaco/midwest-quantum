@@ -1,5 +1,5 @@
-import { ExternalLink } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import ChapterLogo from "@/components/ChapterLogo";
 import ScrollReveal from "@/components/ScrollReveal";
 import { CHAPTERS } from "@/lib/chapters";
@@ -9,16 +9,24 @@ export default function Chapters() {
     <section className="border-b border-border/60">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-28">
         <ScrollReveal>
-          <div className="max-w-3xl">
-            <Badge variant="outline" className="mb-4 px-3.5 py-1 text-xs">
-              Collaborating organizations
-            </Badge>
-            <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl md:text-[2.6rem]">
-              Organized in collaboration across universities & organizations
-            </h2>
-            <p className="mt-4 text-base md:text-lg text-muted-foreground">
-              Bringing together quantum groups, university hosts, and regional organizations across the Midwest.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div>
+              <h2 className="font-heading text-3xl font-bold tracking-tight md:text-4xl">
+                Organized across Midwest universities &amp; regional hubs
+              </h2>
+              <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
+                A historic student coalition uniting collegiate quantum chapters, university hosts, and regional research organizations.
+              </p>
+            </div>
+            <div className="shrink-0">
+              <Link
+                href="/organizers"
+                className="group inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
+              >
+                Meet the organizers
+                <ArrowRight className="size-3.5 transition-transform duration-150 group-hover:translate-x-0.5" />
+              </Link>
+            </div>
           </div>
 
           <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">

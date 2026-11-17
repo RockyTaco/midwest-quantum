@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Sponsors from "@/components/Sponsors";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -183,7 +184,10 @@ export default function SponsorPage() {
                 Partner with MidQWest to connect with top CS, physics, and engineering
                 students and help build a lasting Midwest quantum talent pipeline.
               </p>
-              <div className="mt-8">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <Button asChild size="lg">
+                  <a href="#packages">Explore packages</a>
+                </Button>
                 <Button asChild variant="outline" size="lg">
                   <a
                     href="/MidQWest_Sponsorship_Brochure.png"
@@ -198,8 +202,11 @@ export default function SponsorPage() {
           </div>
         </section>
 
+        {/* Confirmed Sponsors & Partners Showcase at top of page */}
+        <Sponsors showCta={false} className="bg-muted/15" />
+
         {/* Package */}
-        <section className="border-b border-border/60">
+        <section id="packages" className="border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div data-reveal className="max-w-2xl">

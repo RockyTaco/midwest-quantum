@@ -31,18 +31,29 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
-    // Collect this element + any nested [data-reveal] children
-    const targets: Element[] = [el];
-    el.querySelectorAll("[data-reveal]").forEach((t) => targets.push(t));
+    const revealAll = () => {
+      el.classList.add("is-visible");
+      el.querySelectorAll("[data-reveal]").forEach((t) => t.classList.add("is-visible"));
+    };
+
+    // Immediately reveal if already in or near viewport
+    if (typeof window !== "undefined") {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 250) {
+        revealAll();
+      }
+    }
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          targets.forEach((t) => t.classList.add("is-visible"));
-          observer.disconnect();
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            revealAll();
+            observer.disconnect();
+          }
+        });
       },
-      { threshold: 0.08 }
+      { threshold: 0.01, rootMargin: "250px 0px" }
     );
 
     observer.observe(el);

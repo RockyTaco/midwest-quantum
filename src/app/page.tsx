@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight, CalendarDays, MapPin, Users } from "lucide-react";
+import { ArrowRight, Award, Clock, MapPin, Users } from "lucide-react";
 
 import { WAITLIST_URL } from "@/lib/links";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Sponsors from "@/components/Sponsors";
 import Chapters from "@/components/Chapters";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -13,25 +14,34 @@ const GATEWAYS = [
     num: "01",
     icon: Users,
     title: "About the Hackathon",
-    text: "Co-organized by quantum groups and regional partners at UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, UIC, Chicago WHPC, and the Chicago Quantum Exchange to build a united regional quantum community.",
+    text: "Co-organized by quantum groups and regional partners at UIUC, UChicago, Purdue, Purdue Northwest, UW-Madison, UIC, Chicago WHPC, and the Chicago Quantum Exchange.",
     href: "/about",
     cta: "Read our vision",
     external: false,
   },
   {
     num: "02",
-    icon: CalendarDays,
-    title: "Sponsorship",
-    text: "Connect with top CS, physics, and engineering students. Mentor hackers, sponsor challenge tracks, and recruit quantum talent.",
+    icon: Clock,
+    title: "Weekend Schedule",
+    text: "Explore the 24-hour hackathon timeline at UIC Chicago, featuring sponsor tech workshops, team quest reveals, and Sunday project demos.",
+    href: "/schedule",
+    cta: "View schedule",
+    external: false,
+  },
+  {
+    num: "03",
+    icon: Award,
+    title: "Sponsors & Partners",
+    text: "Proudly supported by Northrop Grumman, Infleqtion, BlueQubit, and IBM. Mentor hackers, sponsor challenge tracks, and recruit top talent.",
     href: "/sponsor",
     cta: "Explore partnerships",
     external: false,
   },
   {
-    num: "03",
+    num: "04",
     icon: MapPin,
     title: "Applications Open",
-    text: "Submit your application early! Applications help demonstrate student demand to sponsors to secure maximum event funding and hardware access.",
+    text: "100% free for all Midwest students. Submit your application early to secure your spot, compute access, and travel subsidies.",
     href: WAITLIST_URL,
     cta: "Apply now!",
     external: true,
@@ -44,6 +54,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Sponsors />
         <Chapters />
 
         {/* Gateway cards */}
@@ -59,7 +70,7 @@ export default function Home() {
                 </h2>
               </div>
 
-              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
                 {GATEWAYS.map((g, i) => {
                   const Icon = g.icon;
                   const inner = (

@@ -82,6 +82,12 @@ export default function JsonLd() {
         "organizer": {
           "@id": "https://midqwest.dev/#organization"
         },
+        "sponsor": [
+          { "@type": "Organization", "name": "Northrop Grumman", "url": "https://www.northropgrumman.com/" },
+          { "@type": "Organization", "name": "Infleqtion", "url": "https://www.infleqtion.com/" },
+          { "@type": "Organization", "name": "BlueQubit", "url": "https://www.bluequbit.io/" },
+          { "@type": "Organization", "name": "IBM", "url": "https://www.ibm.com/quantum" }
+        ],
         "offers": {
           "@type": "Offer",
           "url": "https://midqwest.dev",

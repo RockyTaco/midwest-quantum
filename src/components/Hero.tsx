@@ -31,7 +31,6 @@ export default function Hero() {
                   variant="accent"
                   className="max-w-full px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-widest"
                 >
-                  <span className="hidden sm:inline font-heading font-bold text-vivid mr-1.5">MidQWest ·</span>
                   November 21–22, 2026 · Chicago, IL
                 </Badge>
               </div>

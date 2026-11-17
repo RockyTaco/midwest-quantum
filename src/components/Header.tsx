@@ -6,13 +6,14 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { WAITLIST_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
+import { WAITLIST_URL } from "@/lib/links";
 import Logo from "@/components/Logo";
-import { InstagramIcon, LinkedinIcon } from "@/components/SocialIcons";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/schedule", label: "Schedule" },
+  { href: "/organizers", label: "Organizers" },
   { href: "/sponsor", label: "Sponsors" },
 ];
 
@@ -52,29 +53,8 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Desktop actions (Socials + CTA) */}
-        <div className="hidden md:flex md:items-center md:gap-3">
-          <div className="flex items-center gap-1 text-muted-foreground">
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex size-8 items-center justify-center rounded-md transition-colors hover:bg-muted hover:text-foreground"
-              aria-label="MidQWest on Instagram"
-            >
-              <InstagramIcon className="size-4" />
-            </a>
-            <a
-              href={LINKEDIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex size-8 items-center justify-center rounded-md transition-colors hover:bg-muted hover:text-foreground"
-              aria-label="MidQWest on LinkedIn"
-            >
-              <LinkedinIcon className="size-4" />
-            </a>
-          </div>
-
+        {/* Desktop CTA */}
+        <div className="hidden md:block">
           <a
             href={WAITLIST_URL}
             target="_blank"
@@ -133,30 +113,6 @@ export default function Header() {
             >
               Apply now!
             </a>
-
-            <div className="mt-3 flex items-center justify-between border-t border-border/60 pt-3">
-              <span className="text-xs font-medium text-muted-foreground">Follow us</span>
-              <div className="flex items-center gap-1.5 text-muted-foreground">
-                <a
-                  href={INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex size-8 items-center justify-center rounded-md transition-colors hover:bg-muted hover:text-foreground"
-                  aria-label="MidQWest on Instagram"
-                >
-                  <InstagramIcon className="size-4" />
-                </a>
-                <a
-                  href={LINKEDIN_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex size-8 items-center justify-center rounded-md transition-colors hover:bg-muted hover:text-foreground"
-                  aria-label="MidQWest on LinkedIn"
-                >
-                  <LinkedinIcon className="size-4" />
-                </a>
-              </div>
-            </div>
           </nav>
         </div>
       )}

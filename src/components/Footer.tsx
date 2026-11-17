@@ -7,6 +7,8 @@ import { InstagramIcon, LinkedinIcon } from "@/components/SocialIcons";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/schedule", label: "Schedule" },
+  { href: "/organizers", label: "Organizers" },
   { href: "/sponsor", label: "Sponsors" },
 ];
 
@@ -22,27 +24,6 @@ export default function Footer() {
               MidQWest — Midwest Quantum Hackathon<br />
               November 21–22, 2026 · Chicago, IL
             </p>
-            {/* Social links */}
-            <div className="mt-4 flex items-center gap-2">
-              <a
-                href={INSTAGRAM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex size-8 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-border hover:bg-muted hover:text-foreground"
-                aria-label="MidQWest on Instagram"
-              >
-                <InstagramIcon className="size-4" />
-              </a>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex size-8 items-center justify-center rounded-md border border-border/70 text-muted-foreground transition-colors hover:border-border hover:bg-muted hover:text-foreground"
-                aria-label="MidQWest on LinkedIn"
-              >
-                <LinkedinIcon className="size-4" />
-              </a>
-            </div>
           </div>
 
           {/* Nav */}
