@@ -4,10 +4,10 @@ import { ArrowRight, CheckCircle2, Clock, ExternalLink, MapPin, Sparkles, Trophy
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScheduleTimeline from "@/components/ScheduleTimeline";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
-import { SCHEDULE } from "@/lib/schedule";
 import { WAITLIST_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
@@ -171,86 +171,7 @@ export default function SchedulePage() {
         <section className="border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
-              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
-                <div>
-                  <h2 className="font-heading text-3xl font-bold tracking-tight">
-                    Event Itinerary
-                  </h2>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    All times listed in Central Time (CT). Subject to minor operational updates prior to kickoff.
-                  </p>
-                </div>
-                <div className="rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">
-                  Live updates will be posted to Discord
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-                {SCHEDULE.map((dayPlan, dayIdx) => (
-                  <div
-                    key={dayPlan.day}
-                    data-reveal
-                    data-reveal-delay={String(dayIdx + 1) as "1" | "2"}
-                    className="flex flex-col rounded-2xl border border-border bg-card p-6 md:p-8"
-                  >
-                    <div className="flex items-center justify-between border-b border-border/60 pb-5">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
-                            Day 0{dayIdx + 1}
-                          </span>
-                        </div>
-                        <h3 className="mt-1 font-heading text-2xl font-bold text-foreground">
-                          {dayPlan.day}
-                        </h3>
-                      </div>
-                      <span className="rounded-full border border-border bg-muted/50 px-3.5 py-1 font-heading text-xs font-medium text-muted-foreground">
-                        {dayPlan.date}
-                      </span>
-                    </div>
-
-                    <div className="mt-6 flow-root">
-                      <ul className="divide-y divide-border/40">
-                        {dayPlan.events.map((event, idx) => (
-                          <li
-                            key={idx}
-                            className={`py-4.5 first:pt-0 last:pb-0 ${
-                              event.highlight
-                                ? "rounded-xl border border-vivid/20 bg-vivid/5 p-4 my-2"
-                                : ""
-                            }`}
-                          >
-                            <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-                              <span className="inline-flex items-center gap-1.5 font-heading text-xs font-semibold text-foreground">
-                                <Clock className="size-3.5 text-vivid" />
-                                {event.time}
-                              </span>
-                              {event.location && (
-                                <span className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
-                                  <MapPin className="size-3 text-muted-foreground/70" />
-                                  {event.location}
-                                </span>
-                              )}
-                            </div>
-                            <h4
-                              className={`mt-2 font-heading text-base font-semibold ${
-                                event.highlight ? "text-vivid" : "text-foreground"
-                              }`}
-                            >
-                              {event.activity}
-                            </h4>
-                            {event.details && (
-                              <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-                                {event.details}
-                              </p>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ScheduleTimeline />
             </ScrollReveal>
           </div>
         </section>
@@ -287,7 +208,7 @@ export default function SchedulePage() {
                   },
                   {
                     title: "Food & Refreshments",
-                    desc: "Catered lunch, food trucks, snacks, and caffeine provided free of charge throughout the event.",
+                    desc: "Catered meals, breakfast, brunch spread, morning coffee, snacks, and caffeine provided free of charge throughout the event.",
                   },
                   {
                     title: "Discord Access",

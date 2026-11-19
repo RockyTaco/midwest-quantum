@@ -94,7 +94,7 @@ const FAQ = [
   },
   {
     q: "What are 'Quests'?",
-    a: "Quests are hackathon challenge tracks designed with our industry partners and organizers. Full challenge prompts, datasets, and rubric criteria will be unveiled during opening ceremonies on Saturday morning.",
+    a: "Quests are hackathon challenge tracks designed with our industry partners and organizers. Full challenge prompts, datasets, and rubric criteria will be unveiled during opening talks on Saturday morning.",
   },
   {
     q: "Is there a cost to participate?",

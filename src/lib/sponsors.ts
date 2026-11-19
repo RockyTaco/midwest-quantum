@@ -1,6 +1,6 @@
 export interface Sponsor {
   name: string;
-  role: "Sponsor & Challenge Partner" | "Cloud Compute Partner";
+  role: "Sponsor & Challenge Partner" | "Cloud Compute Partner" | "Supporting Sponsor" | "Food & Venue Sponsor" | "Sponsor & Venue Partner";
   tier?: string;
   logo: string;
   url: string;
@@ -47,5 +47,14 @@ export const SPONSORS: Sponsor[] = [
       "Official cloud quantum compute partner providing access to quantum hardware and Qiskit resources for hackathon participants.",
     trademarkNotice:
       "IBM and the IBM logo are trademarks of International Business Machines Corp., registered in many jurisdictions worldwide.",
+  },
+  {
+    name: "Q-CITI",
+    role: "Supporting Sponsor",
+    logo: "/images/qciti_logo.png",
+    url: "https://engineering.uic.edu/",
+    logoWrapperClass: "h-10 w-48",
+    description:
+      "Quantum Center for Information, Technology, and Innovation at UIC, supporting the event venue and catering.",
   },
 ];

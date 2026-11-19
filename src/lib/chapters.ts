@@ -123,20 +123,20 @@ export const STUDENT_ORGANIZERS: LeadershipMember[] = [
     website: "https://ryanymanley.com",
   },
   {
-    name: "Rohit Mandapati",
-    role: "Organizer",
-    org: "Argonne National Laboratory",
-    school: "Boston University",
-    bio: "Physics student at BU and researcher at Argonne who helped with web development.",
-    linkedin: "https://www.linkedin.com/in/rohitmandapati/",
-  },
-  {
     name: "Ashe Francq",
     role: "Organizer",
     org: "UIC Quantum Club",
     school: "University of Illinois Chicago",
     bio: "UIC student organizer serving as communicator, representing the student body, and coordinating on-campus venue logistics.",
     email: "kfrancq2@uic.edu",
+  },
+  {
+    name: "Rohit Mandapati",
+    role: "Organizer",
+    org: "Argonne National Laboratory",
+    school: "Boston University",
+    bio: "Physics student at BU and researcher at Argonne who helped with web development.",
+    linkedin: "https://www.linkedin.com/in/rohitmandapati/",
   },
   {
     name: "Srihas Pendekanti",

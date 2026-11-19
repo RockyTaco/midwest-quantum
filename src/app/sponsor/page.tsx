@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Info } from "lucide-react";
+import { Check, Download, ExternalLink, FileText, Info } from "lucide-react";
 import { useState } from "react";
 
 import Header from "@/components/Header";
@@ -194,7 +194,7 @@ export default function SponsorPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View sponsorship brochure
+                    View brochure
                   </a>
                 </Button>
               </div>
@@ -337,6 +337,42 @@ export default function SponsorPage() {
                   </div>
                 </div>
               ))}
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* Day-of Sponsor Logistics Guide Callout */}
+        <section className="border-t border-border/60 bg-muted/20">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-16 md:py-20">
+            <ScrollReveal>
+              <div className="rounded-2xl border border-border bg-card p-8 md:p-10 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-6 card-lift">
+                <div className="max-w-2xl">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-vivid/10 px-3 py-1 text-xs font-semibold text-vivid">
+                    <FileText className="size-3.5" />
+                    Confirmed Sponsors &amp; Mentors
+                  </span>
+                  <h2 className="mt-3 font-heading text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+                    Day-of Sponsor Schedule &amp; Logistics Guide
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Download our 2-page abridged executive briefing covering venue address (UIC Student Center East, 750 S Halsted St), room directories (IL AB, IL C tabling, Dearborn A/B), exact talk slots (Northrop Grumman, Infleqtion, BlueQubit), parking, Wi-Fi, and Sunday judging expo times.
+                  </p>
+                </div>
+                <div className="shrink-0 flex flex-col sm:flex-row gap-3">
+                  <Button asChild size="lg" className="rounded-full">
+                    <a href="/MidQWest_2026_Sponsor_Guide.pdf" download="MidQWest_2026_Sponsor_Guide.pdf">
+                      <Download className="size-4 mr-2" />
+                      Download Guide (PDF)
+                    </a>
+                  </Button>
+                  <Button asChild variant="outline" size="lg" className="rounded-full">
+                    <a href="/MidQWest_2026_Sponsor_Guide.pdf" target="_blank" rel="noopener noreferrer">
+                      View Full PDF
+                      <ExternalLink className="size-3.5 ml-2" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
         </section>

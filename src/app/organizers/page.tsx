@@ -133,13 +133,8 @@ export default function OrganizersPage() {
                     className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all hover:border-vivid/40 card-lift"
                   >
                     <div>
-                      <div className="flex items-center justify-between">
-                        <div className="flex size-10 items-center justify-center rounded-xl bg-vivid/10 font-heading text-sm font-bold text-vivid">
-                          {lead.name.split(" ").map((n) => n[0]).join("")}
-                        </div>
-                        <span className="rounded-full bg-vivid/10 px-2.5 py-0.5 text-[10px] font-semibold text-vivid">
-                          Organizer
-                        </span>
+                      <div className="flex size-10 items-center justify-center rounded-xl bg-vivid/10 font-heading text-sm font-bold text-vivid">
+                        {lead.name.split(" ").map((n) => n[0]).join("")}
                       </div>
                       <h3 className="mt-4 font-heading text-lg font-bold text-foreground">
                         {lead.name}

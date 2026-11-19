@@ -38,7 +38,7 @@ export default function Sponsors({ showCta = true, className = "" }: SponsorsPro
           </div>
 
           {/* Sponsors Grid */}
-          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {SPONSORS.map((sponsor, i) => (
               <a
                 key={sponsor.name}
@@ -46,7 +46,7 @@ export default function Sponsors({ showCta = true, className = "" }: SponsorsPro
                 target="_blank"
                 rel="noopener noreferrer"
                 data-reveal
-                data-reveal-delay={String(i + 1) as "1" | "2" | "3" | "4"}
+                data-reveal-delay={String(Math.min(i + 1, 6)) as "1" | "2" | "3" | "4" | "5" | "6"}
                 className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all hover:border-vivid/40 hover:bg-muted/20 card-lift"
               >
                 <div>

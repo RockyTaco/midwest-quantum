@@ -1,10 +1,17 @@
+export interface SubScheduleItem {
+  time: string;
+  sponsor: string;
+  note?: string;
+}
+
 export interface ScheduleEvent {
   time: string;
   activity: string;
   location?: string;
   details?: string;
   highlight?: boolean;
-  category?: "Ceremony" | "Hacking" | "Workshop" | "Meal" | "Judging" | "Social";
+  category?: "Talk" | "Hacking" | "Workshop" | "Meal" | "Judging" | "Social" | "Check-In" | "General";
+  subSchedule?: SubScheduleItem[];
 }
 
 export interface ScheduleDay {
@@ -20,10 +27,10 @@ export const SCHEDULE: ScheduleDay[] = [
     events: [
       {
         time: "8:00 AM – 9:15 AM",
-        activity: "Registration & Check-In",
+        activity: "Check-In",
         location: "Fort Dearborn A",
         details: "Participant check-in, attendance logging, swag pick-up, and nametag distribution.",
-        category: "Ceremony",
+        category: "Check-In",
       },
       {
         time: "8:00 AM – 9:00 AM",
@@ -34,24 +41,41 @@ export const SCHEDULE: ScheduleDay[] = [
       },
       {
         time: "9:00 AM – 9:15 AM",
-        activity: "Opening Remarks & Welcome Address",
+        activity: "Opening Remarks & Welcome Talk",
         location: "IL AB",
-        details: "Official welcome address from the MidQWest student organizing team and university partners.",
-        category: "Ceremony",
+        details: "Official welcome address and opening remarks from the MidQWest student organizing team and university partners.",
+        category: "Talk",
       },
       {
         time: "9:15 AM – 9:30 AM",
         activity: "Challenge Tracks & Team Rosters Released",
         location: "IL AB",
         details: "Overview of quest tracks and live team assignment release via QR code and Discord channels.",
-        category: "Ceremony",
+        category: "Talk",
       },
       {
         time: "9:30 AM – 12:00 PM",
-        activity: "Sponsor Tech Talks & Developer Workshops",
+        activity: "Sponsor Talks",
         location: "IL AB",
-        details: "Hands-on technical deep dives, cloud hardware and SDK tooling walkthroughs, and challenge preparation sessions led by sponsor engineers.",
-        category: "Workshop",
+        details: "45-minute company introductions and challenge quest briefings by sponsor engineering teams, with 5-minute buffer and Q&A.",
+        category: "Talk",
+        subSchedule: [
+          {
+            time: "9:30 AM – 10:15 AM",
+            sponsor: "Northrop Grumman",
+            note: "5 min buffer and Q&A",
+          },
+          {
+            time: "10:20 AM – 11:05 AM",
+            sponsor: "Infleqtion",
+            note: "5 min buffer and Q&A",
+          },
+          {
+            time: "11:10 AM – 11:55 AM",
+            sponsor: "BlueQubit",
+            note: "5 min buffer and Q&A",
+          },
+        ],
       },
       {
         time: "12:00 PM – 1:15 PM",
@@ -62,15 +86,15 @@ export const SCHEDULE: ScheduleDay[] = [
       },
       {
         time: "1:15 PM – 2:00 PM",
-        activity: "Hackathon Challenges & Prompts Officially Revealed",
+        activity: "Hackathon Challenges & Prompts Revealed",
         location: "IL AB",
-        details: "Sponsors officially release problem statements, datasets, and rubric criteria. Teams assemble in work zones.",
-        category: "Ceremony",
+        details: "Sponsors officially release problem statements, datasets, and rubric criteria. Teams assemble throughout venue.",
+        category: "Talk",
       },
       {
         time: "2:00 PM",
         activity: "24-Hour Hackathon Sprint Begins!",
-        location: "IL AB & Hacker Spaces",
+        location: "IL AB & throughout venue",
         details: "The 24-hour hacking countdown starts! Student teams build quantum algorithms, simulators, and applications with live sponsor mentorship.",
         highlight: true,
         category: "Hacking",
@@ -85,7 +109,7 @@ export const SCHEDULE: ScheduleDay[] = [
       {
         time: "Evening & Overnight",
         activity: "Overnight Hacking & Virtual Mentor Helpdesk",
-        location: "Hacker Zones & Discord",
+        location: "Throughout venue & Discord",
         details: "Continued hacking sprints with snack stations and round-the-clock technical support from mentors on Discord.",
         category: "Hacking",
       },
@@ -96,17 +120,17 @@ export const SCHEDULE: ScheduleDay[] = [
     date: "November 22, 2026",
     events: [
       {
-        time: "8:00 AM – 9:00 AM",
-        activity: "Breakfast & Morning Coffee",
+        time: "8:30 AM – 10:30 AM",
+        activity: "Catered Breakfast, Brunch & Morning Coffee",
         location: "Fort Dearborn A",
-        details: "Morning fuel, coffee, and sprint progress check-ins with team members.",
+        details: "Catered breakfast and brunch spread with fresh morning coffee and snacks to fuel teams for the final hacking stretch.",
         category: "Meal",
       },
       {
-        time: "12:00 PM – 1:30 PM",
-        activity: "Food Trucks (Brunch / Lunch)",
-        location: "Outside Student Center East",
-        details: "On-site food trucks to keep hackers energized for final submission polishing.",
+        time: "12:00 PM – 1:00 PM",
+        activity: "Midday Coffee & Final Sprint Prep",
+        location: "Fort Dearborn A & throughout venue",
+        details: "Morning coffee refresh and quick energy fuel as teams polish their code and demo decks ahead of the 2:00 PM code freeze.",
         category: "Meal",
       },
       {
@@ -126,11 +150,11 @@ export const SCHEDULE: ScheduleDay[] = [
       },
       {
         time: "4:00 PM – 4:30 PM",
-        activity: "Awards Ceremony & Winner Announcements",
+        activity: "Closing Talk & Awards",
         location: "IL AB",
-        details: "Official closing ceremony, track winners revealed, prize awards, and celebration of student achievements.",
+        details: "Closing remarks, track winners revealed, prize awards, and celebration of student achievements.",
         highlight: true,
-        category: "Ceremony",
+        category: "Talk",
       },
       {
         time: "4:30 PM – 5:00 PM",
@@ -144,7 +168,7 @@ export const SCHEDULE: ScheduleDay[] = [
         activity: "MidQWest 2026 Concludes",
         location: "UIC Campus",
         details: "Official conclusion of the Midwest Quantum Hackathon.",
-        category: "Ceremony",
+        category: "General",
       },
     ],
   },
