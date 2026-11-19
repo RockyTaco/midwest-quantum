@@ -15,7 +15,7 @@ export default function Chapters() {
                 Organized across Midwest universities &amp; regional hubs
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground leading-relaxed">
-                A historic student coalition uniting collegiate quantum chapters, university hosts, and regional research organizations.
+                A student-led initiative uniting collegiate quantum clubs, university hosts, and regional research organizations across the Midwest.
               </p>
             </div>
             <div className="shrink-0">

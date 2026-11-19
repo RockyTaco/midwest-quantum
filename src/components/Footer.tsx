@@ -6,10 +6,10 @@ import { InstagramIcon, LinkedinIcon } from "@/components/SocialIcons";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/schedule", label: "Schedule" },
-  { href: "/organizers", label: "Organizers" },
   { href: "/sponsor", label: "Sponsors" },
+  { href: "/organizers", label: "Organizers" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Footer() {

@@ -79,7 +79,7 @@ export const SCHEDULE: ScheduleDay[] = [
         time: "5:00 PM – 6:00 PM",
         activity: "Social Break & Mentor Networking",
         location: "Main Concourse",
-        details: "Afternoon break with snacks, mentor office hours, and university chapter networking.",
+        details: "Afternoon break with snacks, mentor office hours, and student club networking.",
         category: "Social",
       },
       {

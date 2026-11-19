@@ -42,7 +42,7 @@ export const SPONSORS: Sponsor[] = [
     role: "Cloud Compute Partner",
     logo: "/images/ibm_official.png",
     url: "https://www.ibm.com/",
-    logoWrapperClass: "h-14 w-36",
+    logoWrapperClass: "h-7 w-20",
     description:
       "Official cloud quantum compute partner providing access to quantum hardware and Qiskit resources for hackathon participants.",
     trademarkNotice:

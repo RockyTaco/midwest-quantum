@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ExternalLink, GraduationCap, MapPin, School, Sparkles, Users } from "lucide-react";
+import { ArrowRight, ExternalLink, GraduationCap, Mail, MapPin, School, Sparkles, Users } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ChapterLogo from "@/components/ChapterLogo";
+import FlyerSection from "@/components/FlyerSection";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
-import { CHAPTERS, STUDENT_DIRECTORS, FACULTY_ADVISOR } from "@/lib/chapters";
+import { CHAPTERS, STUDENT_DIRECTORS, INSTITUTIONAL_ADVISORS } from "@/lib/chapters";
 import { WAITLIST_URL } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: "Organizers & Student Coalition | MidQWest 2026",
   description:
-    "Meet the student leaders, university chapters, faculty advisor, and regional quantum hubs co-organizing the Midwest Quantum Hackathon (MidQWest) at UIC Chicago.",
+    "Meet the student organizers, university clubs & organizations, faculty advisors, and regional quantum hubs co-organizing the Midwest Quantum Hackathon (MidQWest) at UIC Chicago.",
   keywords: [
     "MidQWest organizers",
     "Midwest quantum student coalition",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Organizers & Student Coalition — MidQWest 2026",
     description:
-      "A first-of-its-kind collegiate quantum alliance uniting student organizations across UIC, UIUC, UChicago, Purdue, UW-Madison, and PNW.",
+      "Students in quantum student organizations across the Midwest taking the initiative to put together an open hackathon for the regional community.",
     url: "https://midqwest.dev/organizers",
     siteName: "MidQWest",
     locale: "en_US",
@@ -53,15 +55,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Organizers & Student Coalition — MidQWest 2026",
     description:
-      "A first-of-its-kind collegiate quantum alliance uniting student organizations across top Midwest universities.",
+      "Students in quantum student organizations across the Midwest taking the initiative to put together an open hackathon for the regional community.",
     images: ["https://midqwest.dev/og-image-v2.png"],
     creator: "@midqwest",
   },
 };
 
 export default function OrganizersPage() {
-  const universityChapters = CHAPTERS.filter(
-    (c) => c.role === "Host Institution" || c.role === "Founding Chapter"
+  const universityClubs = CHAPTERS.filter(
+    (c) => c.role === "Host Institution" || c.role === "Founding Organization"
   );
   const regionalPartners = CHAPTERS.filter((c) => c.role === "Regional Partner");
 
@@ -100,142 +102,126 @@ export default function OrganizersPage() {
                 The Student Coalition Behind MidQWest
               </h1>
               <p className="mt-6 text-lg md:text-xl leading-relaxed text-muted-foreground">
-                MidQWest is a historic first-of-its-kind collegiate alliance uniting student quantum organizations, university faculty, and regional research hubs across the Midwest.
+                MidQWest is driven by students in quantum student organizations across the Midwest taking the initiative to put together an open, hands-on hackathon for the regional community.
               </p>
               <p className="mt-4 text-base md:text-lg leading-relaxed text-muted-foreground">
-                Founded and organized entirely by students, we are dedicated to expanding quantum computing literacy, fostering hands-on technical skills, and connecting collegiate builders directly with leading industry innovators.
+                Organized by students across top regional universities, we are dedicated to expanding quantum computing literacy, fostering hands-on technical skills, and connecting collegiate builders directly with leading industry innovators.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Host Institution & Faculty Advisor */}
+        {/* 1. Student Organizing Committee */}
         <section className="border-b border-border/60 bg-muted/20">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div className="max-w-3xl">
                 <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                  Host Campus &amp; Academic Leadership
+                  Student Organizing Committee
                 </h2>
                 <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Proudly hosted in the heart of Chicago at the University of Illinois Chicago, with faculty guidance from the Department of Electrical and Computer Engineering.
+                  MidQWest is driven by student organizers from collegiate quantum clubs and organizations across the Midwest, collaborating to build an open, accessible, and high-impact hackathon.
                 </p>
               </div>
 
-              <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-                {/* Host Institution Card */}
-                <div className="flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-all hover:border-vivid/40 card-lift">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="flex size-11 items-center justify-center rounded-xl"
-                        style={{ background: "oklch(0.58 0.24 258 / 0.1)" }}
-                      >
-                        <School className="size-5" style={{ color: "oklch(0.58 0.24 258)" }} />
+              <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {STUDENT_DIRECTORS.map((lead, i) => (
+                  <div
+                    key={lead.name}
+                    data-reveal
+                    data-reveal-delay={String(Math.min(i + 1, 6)) as "1" | "2" | "3" | "4" | "5" | "6"}
+                    className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all hover:border-vivid/40 card-lift"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex size-10 items-center justify-center rounded-xl bg-vivid/10 font-heading text-sm font-bold text-vivid">
+                          {lead.name.split(" ").map((n) => n[0]).join("")}
+                        </div>
+                        <span className="rounded-full bg-vivid/10 px-2.5 py-0.5 text-[10px] font-semibold text-vivid">
+                          Organizer
+                        </span>
                       </div>
-                      <div>
-                        <h3 className="font-heading text-xl font-bold text-foreground">
-                          University of Illinois Chicago (UIC)
-                        </h3>
-                        <p className="text-xs text-muted-foreground">
-                          Department of Electrical &amp; Computer Engineering (ECE)
-                        </p>
-                      </div>
-                    </div>
-
-                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                      As Chicago’s largest public research institution, UIC is centrally situated within the Illinois quantum corridor. UIC ECE provides the venue, institutional support, and academic backing to welcome 150–200 collegiate builders from across the Midwest.
-                    </p>
-
-                    <div className="mt-6 flex flex-col gap-2 rounded-xl border border-border/60 bg-muted/30 p-4 text-xs text-muted-foreground">
-                      <div className="flex items-center gap-2 text-foreground font-medium">
-                        <MapPin className="size-4 shrink-0 text-vivid" />
-                        <span>Venue Location</span>
-                      </div>
-                      <p className="pl-6">
-                        Illinois Room, Student Center East (SCE)<br />
-                        750 S Halsted St, Chicago, IL 60607
+                      <h3 className="mt-4 font-heading text-lg font-bold text-foreground">
+                        {lead.name}
+                      </h3>
+                      <p className="mt-1 font-semibold text-xs text-foreground">
+                        {lead.org}
                       </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-border/40">
-                    <a
-                      href="https://ece.uic.edu/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-vivid transition-colors"
-                    >
-                      Visit UIC ECE Department
-                      <ExternalLink className="size-3" />
-                    </a>
-                  </div>
-                </div>
-
-                {/* Faculty Advisor Card */}
-                <div className="flex flex-col justify-between rounded-2xl border border-border bg-card p-8 shadow-sm transition-all hover:border-vivid/40 card-lift">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="flex size-11 items-center justify-center rounded-xl"
-                        style={{ background: "oklch(0.58 0.24 258 / 0.1)" }}
-                      >
-                        <GraduationCap className="size-5" style={{ color: "oklch(0.58 0.24 258)" }} />
-                      </div>
-                      <div>
-                        <h3 className="font-heading text-xl font-bold text-foreground">
-                          {FACULTY_ADVISOR.name}
-                        </h3>
-                        <p className="text-xs text-muted-foreground">
-                          {FACULTY_ADVISOR.title} · {FACULTY_ADVISOR.department}
-                        </p>
-                      </div>
-                    </div>
-
-                    <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                      {FACULTY_ADVISOR.bio}
-                    </p>
-
-                    <div className="mt-6 rounded-xl border border-border/60 bg-muted/30 p-4 text-xs text-muted-foreground">
-                      <p className="font-medium text-foreground">Academic Focus</p>
-                      <p className="mt-1 leading-relaxed">
-                        Quantum hardware, photonics, nanophotonics, and quantum information science research. Supporting student initiatives and regional workforce acceleration.
+                      <p className="text-xs text-muted-foreground">
+                        {lead.school}
                       </p>
+                      {lead.bio && (
+                        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                          {lead.bio}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t border-border/40 flex items-center justify-between text-xs">
+                      {lead.linkedin ? (
+                        <a
+                          href={lead.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground hover:text-vivid transition-colors"
+                        >
+                          LinkedIn Profile
+                          <ExternalLink className="size-3" />
+                        </a>
+                      ) : lead.website ? (
+                        <a
+                          href={lead.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground hover:text-vivid transition-colors"
+                        >
+                          Personal Website
+                          <ExternalLink className="size-3" />
+                        </a>
+                      ) : lead.email ? (
+                        <a
+                          href={`mailto:${lead.email}`}
+                          className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground hover:text-vivid transition-colors"
+                        >
+                          <Mail className="size-3" />
+                          Contact Organizer
+                        </a>
+                      ) : null}
+
+                      {lead.github && (
+                        <a
+                          href={lead.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground hover:text-vivid transition-colors"
+                        >
+                          GitHub
+                          <ExternalLink className="size-3" />
+                        </a>
+                      )}
                     </div>
                   </div>
-
-                  <div className="mt-6 pt-4 border-t border-border/40">
-                    <a
-                      href={FACULTY_ADVISOR.profileUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-vivid transition-colors"
-                    >
-                      UIC Faculty Profile
-                      <ExternalLink className="size-3" />
-                    </a>
-                  </div>
-                </div>
+                ))}
               </div>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* Founding University Student Chapters */}
+        {/* 2. Founding Student Clubs & Organizations */}
         <section className="border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div className="max-w-3xl">
                 <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                  Founding University Chapters
+                  Founding Student Clubs &amp; Orgs
                 </h2>
                 <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  Student-run quantum computing organizations from top research universities co-organizing the hackathon, hosting technical workshops, and mobilizing student delegations.
+                  Student-run quantum computing clubs and organizations from top research universities co-organizing the hackathon, hosting technical workshops, and mobilizing student delegations.
                 </p>
               </div>
 
               <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {universityChapters.map((chapter, i) => (
+                {universityClubs.map((chapter, i) => (
                   <div
                     key={chapter.university}
                     data-reveal
@@ -272,12 +258,12 @@ export default function OrganizersPage() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground group-hover:text-vivid transition-colors"
                         >
-                          Visit chapter website
+                          Visit club website
                           <ArrowRight className="size-3 transition-transform group-hover:translate-x-0.5" />
                         </a>
                       ) : (
                         <span className="text-xs font-medium text-muted-foreground/60">
-                          Host Campus Chapter
+                          Host Campus Club
                         </span>
                       )}
                     </div>
@@ -288,8 +274,158 @@ export default function OrganizersPage() {
           </div>
         </section>
 
-        {/* Regional Ecosystem Hubs */}
+        {/* 3. Host Campus & Institutional Leadership (UIC) */}
         <section className="border-b border-border/60 bg-muted/20">
+          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
+            <ScrollReveal>
+              <div className="max-w-3xl">
+                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                  Host Campus &amp; Institutional Leadership
+                </h2>
+                <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">
+                  Proudly hosted in the heart of Chicago at the University of Illinois Chicago, supported by academic faculty, high-performance computing leadership, and College of Engineering administration.
+                </p>
+              </div>
+
+              {/* Host Campus & Venue Card */}
+              <div className="mt-10 rounded-2xl border border-border bg-card p-6 md:p-8 shadow-sm transition-all hover:border-vivid/40">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                  <div className="lg:col-span-7">
+                    <div className="flex items-center gap-3.5">
+                      <div className="flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/60 bg-card p-1">
+                        <Image
+                          src="/images/uic_logo.svg"
+                          alt="UIC Logo"
+                          width={48}
+                          height={48}
+                          unoptimized
+                          className="size-full object-contain"
+                        />
+                      </div>
+                      <div>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-vivid/10 px-2.5 py-0.5 text-[11px] font-semibold text-vivid">
+                          Host Institution &amp; Venue
+                        </span>
+                        <h3 className="font-heading text-xl font-bold text-foreground">
+                          University of Illinois Chicago (UIC)
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          Department of Electrical &amp; Computer Engineering (ECE)
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                      As Chicago’s largest public research institution, UIC is centrally situated within the Illinois quantum corridor. UIC ECE provides the premier venue, institutional backing, and academic support to welcome 150–200 collegiate builders from across the Midwest.
+                    </p>
+                  </div>
+
+                  <div className="lg:col-span-5 flex flex-col justify-between gap-4 rounded-xl border border-border/60 bg-muted/30 p-5 text-xs text-muted-foreground">
+                    <div className="flex items-start gap-2.5 text-foreground font-medium">
+                      <MapPin className="size-4 shrink-0 text-vivid mt-0.5" />
+                      <div>
+                        <p className="font-semibold text-foreground">Illinois Room · Student Center East (SCE)</p>
+                        <p className="mt-0.5 font-normal text-muted-foreground">
+                          750 S Halsted St, Chicago, IL 60607
+                        </p>
+                      </div>
+                    </div>
+                    <div className="pt-2 border-t border-border/40 flex items-center justify-between">
+                      <span className="text-[11px] text-muted-foreground">November 21–22, 2026</span>
+                      <a
+                        href="https://ece.uic.edu/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground hover:text-vivid transition-colors"
+                      >
+                        Visit UIC ECE
+                        <ExternalLink className="size-3" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 2x2 Grid: Institutional Leadership & Advisors */}
+              <div className="mt-8">
+                <div className="mb-5 flex items-center justify-between">
+                  <h3 className="font-heading text-lg font-bold text-foreground">
+                    Institutional Advisors &amp; Administration
+                  </h3>
+                  <span className="text-xs text-muted-foreground">
+                    University of Illinois Chicago
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {INSTITUTIONAL_ADVISORS.map((advisor, i) => (
+                    <div
+                      key={advisor.name}
+                      data-reveal
+                      data-reveal-delay={String(i + 1) as "1" | "2" | "3" | "4"}
+                      className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:border-vivid/40 card-lift"
+                    >
+                      <div>
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="flex items-center gap-3">
+                            <div className="flex size-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border/60 bg-card p-1 shadow-xs">
+                              <Image
+                                src="/images/uic_logo.svg"
+                                alt="UIC Logo"
+                                width={44}
+                                height={44}
+                                unoptimized
+                                className="size-full object-contain"
+                              />
+                            </div>
+                            <div>
+                              <h4 className="font-heading text-lg font-bold text-foreground group-hover:text-vivid transition-colors">
+                                {advisor.name}
+                              </h4>
+                              <p className="text-xs text-muted-foreground line-clamp-1">
+                                {advisor.title}
+                              </p>
+                            </div>
+                          </div>
+                          <span className="shrink-0 rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-semibold text-muted-foreground">
+                            {advisor.institution === "University of Illinois Chicago" ? "UIC" : advisor.institution}
+                          </span>
+                        </div>
+
+                        <div className="mt-4">
+                          <span className="inline-block rounded-md bg-vivid/10 px-2 py-0.5 text-[11px] font-medium text-vivid">
+                            {advisor.role}
+                          </span>
+                          <p className="mt-1 text-xs text-muted-foreground">
+                            {advisor.department}
+                          </p>
+                        </div>
+
+                        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                          {advisor.bio}
+                        </p>
+                      </div>
+
+                      <div className="mt-5 pt-4 border-t border-border/40 flex items-center justify-between text-xs">
+                        <a
+                          href={advisor.profileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-semibold text-muted-foreground group-hover:text-vivid transition-colors"
+                        >
+                          {advisor.profileLabel || "View Profile"}
+                          <ExternalLink className="size-3" />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* 4. Regional Ecosystem Hubs & Partners */}
+        <section className="border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <ScrollReveal>
               <div className="max-w-3xl">
@@ -350,71 +486,8 @@ export default function OrganizersPage() {
           </div>
         </section>
 
-        {/* Student Organizing Leadership */}
-        <section className="border-b border-border/60">
-          <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
-            <ScrollReveal>
-              <div className="max-w-3xl">
-                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                  Student Organizing Committee
-                </h2>
-                <p className="mt-3 text-base md:text-lg text-muted-foreground leading-relaxed">
-                  MidQWest is driven by passionate undergraduate and graduate student leaders working across universities to create an unforgettable hackathon experience.
-                </p>
-              </div>
-
-              <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                {STUDENT_DIRECTORS.map((lead, i) => (
-                  <div
-                    key={lead.name}
-                    data-reveal
-                    data-reveal-delay={String(i + 1) as "1" | "2" | "3"}
-                    className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all hover:border-vivid/40 card-lift"
-                  >
-                    <div>
-                      <div className="flex size-10 items-center justify-center rounded-xl bg-vivid/10 font-heading text-sm font-bold text-vivid">
-                        {lead.name.split(" ").map((n) => n[0]).join("")}
-                      </div>
-                      <h3 className="mt-4 font-heading text-lg font-bold text-foreground">
-                        {lead.name}
-                      </h3>
-                      <p className="mt-1 font-medium text-xs text-vivid">
-                        {lead.role}
-                      </p>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {lead.school}
-                      </p>
-                    </div>
-
-                    <div className="mt-6 pt-4 border-t border-border/40">
-                      {lead.website ? (
-                        <a
-                          href={lead.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-vivid transition-colors"
-                        >
-                          Personal Website
-                          <ExternalLink className="size-3" />
-                        </a>
-                      ) : lead.linkedin ? (
-                        <a
-                          href={lead.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-vivid transition-colors"
-                        >
-                          LinkedIn Profile
-                          <ExternalLink className="size-3" />
-                        </a>
-                      ) : null}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
+        {/* Official Flyer Section */}
+        <FlyerSection />
 
         {/* Bring Your University / Join the Coalition */}
         <section className="bg-gradient-to-b from-card via-muted/20 to-background">

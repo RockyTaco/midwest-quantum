@@ -6,15 +6,16 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { WAITLIST_URL } from "@/lib/links";
+import { WAITLIST_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/links";
 import Logo from "@/components/Logo";
+import { InstagramIcon, LinkedinIcon } from "@/components/SocialIcons";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/schedule", label: "Schedule" },
-  { href: "/organizers", label: "Organizers" },
   { href: "/sponsor", label: "Sponsors" },
+  { href: "/organizers", label: "Organizers" },
+  { href: "/about", label: "About" },
 ];
 
 export default function Header() {
@@ -53,8 +54,29 @@ export default function Header() {
           })}
         </nav>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Desktop actions & social */}
+        <div className="hidden items-center gap-3 md:flex">
+          <div className="flex items-center gap-1 text-muted-foreground">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="MidQWest on Instagram"
+              className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <InstagramIcon className="size-4" />
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="MidQWest on LinkedIn"
+              className="flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <LinkedinIcon className="size-4" />
+            </a>
+          </div>
+
           <a
             href={WAITLIST_URL}
             target="_blank"
@@ -113,6 +135,26 @@ export default function Header() {
             >
               Apply now!
             </a>
+            <div className="mt-3 flex items-center justify-center gap-4 border-t border-border/40 pt-3">
+              <a
+                href={INSTAGRAM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MidQWest on Instagram"
+                className="flex size-9 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              >
+                <InstagramIcon className="size-4" />
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MidQWest on LinkedIn"
+                className="flex size-9 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              >
+                <LinkedinIcon className="size-4" />
+              </a>
+            </div>
           </nav>
         </div>
       )}

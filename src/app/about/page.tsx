@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FlyerSection from "@/components/FlyerSection";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import { WAITLIST_URL } from "@/lib/links";
@@ -89,7 +90,7 @@ const FAQ = [
   },
   {
     q: "Who can participate?",
-    a: "150–200 undergraduate and graduate students from universities across the Midwest studying CS, Physics, Engineering, Mathematics, and related fields. No prior quantum computing experience is required — crash courses, tutorials, and mentors are provided.",
+    a: "150–200 undergraduate and graduate students from universities across the Midwest. There are no major restrictions — all interested students are welcome! No prior quantum computing experience is required.",
   },
   {
     q: "What are 'Quests'?",
@@ -333,13 +334,13 @@ export default function AboutPage() {
                     Organized by a Midwest student coalition
                   </h2>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    MidQWest is 100% student-organized across 6 university chapters (UIC, UIUC, UChicago, Purdue, UW-Madison, PNW) with faculty guidance from UIC ECE and regional partnership from Chicago Quantum Exchange (CQE) and Chicago WHPC.
+                    MidQWest is 100% student-organized across 6 university clubs and organizations (UIC, UIUC, UChicago, Purdue, UW-Madison, PNW) with faculty guidance from UIC ECE and regional partnership from Chicago Quantum Exchange (CQE) and Chicago WHPC.
                   </p>
                 </div>
                 <div className="shrink-0">
                   <Button asChild variant="outline" size="lg" className="rounded-full">
                     <Link href="/organizers" className="inline-flex items-center gap-2">
-                      Meet the organizers &amp; chapters
+                      Meet the organizers &amp; clubs
                       <ArrowRight className="size-4" />
                     </Link>
                   </Button>
@@ -348,6 +349,9 @@ export default function AboutPage() {
             </ScrollReveal>
           </div>
         </section>
+
+        {/* Official Flyer Section */}
+        <FlyerSection />
 
         {/* FAQs */}
         <section className="border-b border-border/60 bg-muted/20">
