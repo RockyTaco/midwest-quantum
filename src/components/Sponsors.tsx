@@ -88,30 +88,50 @@ export default function Sponsors({ showCta = true, className = "" }: SponsorsPro
             )}
           </div>
 
-          {/* Sponsors Grid: Stack of 3 on top of 2 (IBM & Q-CITI at the bottom) */}
-          <div className="mt-12 space-y-6">
-            {/* Top row: 3 Challenge Partners */}
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {topSponsors.map((sponsor, i) => (
-                <SponsorCard
-                  key={sponsor.name}
-                  sponsor={sponsor}
-                  index={i}
-                  className={`h-full ${i === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
-                />
-              ))}
+          {/* Sponsors Grid: Natural partition like flyer */}
+          <div className="mt-12 space-y-10">
+            {/* 1. Challenge Partners (GHZ) */}
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                Challenge Partners (GHZ)
+              </p>
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {topSponsors.map((sponsor, i) => (
+                  <SponsorCard
+                    key={sponsor.name}
+                    sponsor={sponsor}
+                    index={i}
+                    className={`h-full ${i === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+                  />
+                ))}
+              </div>
             </div>
 
-            {/* Bottom row: IBM & Q-CITI - same card width as top row, centered */}
+            {/* 2. Cloud Compute & Venue / Food Support */}
             <div className="flex flex-col sm:flex-row sm:justify-center gap-6">
-              {bottomSponsors.map((sponsor, i) => (
+              {/* IBM: Cloud Compute Partner */}
+              <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                  Cloud Compute Partner
+                </p>
                 <SponsorCard
-                  key={sponsor.name}
-                  sponsor={sponsor}
-                  index={i + 3}
-                  className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
+                  sponsor={bottomSponsors[0]}
+                  index={3}
+                  className="h-full"
                 />
-              ))}
+              </div>
+
+              {/* Q-CITI: Venue & Food Support (Bell) */}
+              <div className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+                  Venue &amp; Food Support (Bell)
+                </p>
+                <SponsorCard
+                  sponsor={bottomSponsors[1]}
+                  index={4}
+                  className="h-full"
+                />
+              </div>
             </div>
           </div>
 
