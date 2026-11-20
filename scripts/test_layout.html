@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@page { size: letter portrait; margin: 0; }
+body { margin: 0; padding: 0; }
+.page {
+  width: 8.5in;
+  height: 11in;
+  padding: 1.0in 0.75in;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 3.5in 3.5in;
+  grid-template-rows: repeat(4, 2.25in);
+  page-break-after: always;
+}
+.cell {
+  width: 3.5in;
+  height: 2.25in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.card {
+  width: 2.25in;
+  height: 3.5in;
+  transform: rotate(-90deg);
+  transform-origin: center center;
+  box-sizing: border-box;
+  border: 1px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.15in;
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="cell"><div class="card">Card 1</div></div>
+  <div class="cell"><div class="card">Card 2</div></div>
+  <div class="cell"><div class="card">Card 3</div></div>
+  <div class="cell"><div class="card">Card 4</div></div>
+  <div class="cell"><div class="card">Card 5</div></div>
+  <div class="cell"><div class="card">Card 6</div></div>
+  <div class="cell"><div class="card">Card 7</div></div>
+  <div class="cell"><div class="card">Card 8</div></div>
+</div>
+</body>
+</html>

@@ -142,7 +142,7 @@ const BUDGET = [
   },
   {
     allocation: "Food & Catering",
-    impact: "Breakfasts, lunches, dinners, snacks, and coffee throughout the weekend.",
+    impact: "Breakfasts, lunches, dinners, and coffee throughout the weekend.",
     extra: false,
   },
   {

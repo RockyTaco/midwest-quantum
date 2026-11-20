@@ -199,7 +199,7 @@ export default function SchedulePage() {
                   },
                   {
                     title: "Food & Refreshments",
-                    desc: "Catered meals, breakfast, brunch spread, morning coffee, snacks, and caffeine provided free of charge throughout the event.",
+                    desc: "Catered meals, breakfast, brunch spread, morning coffee, and refreshments provided free of charge throughout the event.",
                   },
                   {
                     title: "Discord Access",
