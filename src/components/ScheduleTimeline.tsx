@@ -8,21 +8,9 @@ import {
   Eye,
   EyeOff,
   MapPin,
-  Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SCHEDULE, type ScheduleDay, type ScheduleEvent } from "@/lib/schedule";
-
-const CATEGORY_STYLES: Record<string, string> = {
-  Talk: "bg-blue-500/10 text-blue-700 dark:text-blue-300 border-blue-500/20",
-  Workshop: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border-cyan-500/20",
-  Hacking: "bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border-emerald-500/20",
-  Meal: "bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/20",
-  Judging: "bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/20",
-  Social: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border-indigo-500/20",
-  "Check-In": "bg-purple-500/10 text-purple-700 dark:text-purple-300 border-purple-500/20",
-  General: "bg-muted text-muted-foreground border-border",
-};
 
 export default function ScheduleTimeline() {
   // Global show details toggle — default is false (brief view) as requested
@@ -49,12 +37,9 @@ export default function ScheduleTimeline() {
       {/* Section Header with Controls */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
         <div>
-          <div className="flex items-center gap-2 mb-1.5">
+          <div className="mb-1.5">
             <span className="font-heading text-xs font-semibold uppercase tracking-wider text-vivid">
               Interactive Itinerary
-            </span>
-            <span className="inline-flex items-center rounded-full border border-border bg-muted/60 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground">
-              {showAllDetails ? "Detailed View" : "Brief View (Headers Only)"}
             </span>
           </div>
           <h2 className="font-heading text-3xl font-bold tracking-tight">
@@ -65,7 +50,7 @@ export default function ScheduleTimeline() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+        <div className="flex items-center shrink-0">
           <Button
             variant="outline"
             size="sm"
@@ -85,10 +70,6 @@ export default function ScheduleTimeline() {
               </>
             )}
           </Button>
-
-          <div className="hidden md:inline-flex rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-300">
-            Live updates on Discord
-          </div>
         </div>
       </div>
 
@@ -111,7 +92,7 @@ export default function ScheduleTimeline() {
                   {dayPlan.day}
                 </h3>
               </div>
-              <span className="rounded-full border border-border bg-muted/50 px-3 py-1 font-heading text-xs font-medium text-muted-foreground">
+              <span className="font-heading text-xs font-medium text-muted-foreground">
                 {dayPlan.date}
               </span>
             </div>
@@ -138,27 +119,16 @@ export default function ScheduleTimeline() {
                           : "py-2.5 first:pt-1 last:pb-1"
                       }`}
                     >
-                      {/* Top Meta: Time + Category + Location */}
+                      {/* Top Meta: Time + Location */}
                       <div className="flex flex-wrap items-center justify-between gap-x-2.5 gap-y-1">
-                        <div className="flex items-center gap-2">
-                          <span className="inline-flex items-center gap-1.5 font-heading text-xs font-semibold text-foreground">
-                            <Clock className="size-3.5 text-vivid shrink-0" />
-                            {event.time}
-                          </span>
-                          {event.category && (
-                            <span
-                              className={`rounded-full border px-2 py-0.2 text-[10px] font-semibold tracking-wide ${
-                                CATEGORY_STYLES[event.category] || "bg-muted text-muted-foreground"
-                              }`}
-                            >
-                              {event.category}
-                            </span>
-                          )}
-                        </div>
+                        <span className="inline-flex items-center gap-1.5 font-heading text-xs font-semibold text-foreground">
+                          <Clock className="size-3.5 text-vivid shrink-0" />
+                          {event.time}
+                        </span>
 
                         <div className="flex items-center gap-2">
                           {event.location && (
-                            <span className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+                            <span className="inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground">
                               <MapPin className="size-3 text-muted-foreground/70 shrink-0" />
                               {event.location}
                             </span>

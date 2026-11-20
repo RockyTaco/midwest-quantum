@@ -6,7 +6,6 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Sponsors from "@/components/Sponsors";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -172,11 +171,6 @@ export default function SponsorPage() {
         <section className="border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <div className="hero-animate max-w-3xl">
-              <div>
-                <Badge variant="accent" className="mb-6">
-                  Sponsors &amp; partners
-                </Badge>
-              </div>
               <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
                 Support regional quantum innovation
               </h1>

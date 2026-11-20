@@ -5,7 +5,6 @@ import { ArrowRight, CheckCircle2, Clock, ExternalLink, MapPin, Sparkles, Trophy
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScheduleTimeline from "@/components/ScheduleTimeline";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import ScrollReveal from "@/components/ScrollReveal";
 import { WAITLIST_URL } from "@/lib/links";
@@ -98,11 +97,6 @@ export default function SchedulePage() {
         <section className="relative overflow-hidden border-b border-border/60">
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-20 md:py-24">
             <div className="hero-animate max-w-3xl">
-              <div>
-                <Badge variant="accent" className="mb-4">
-                  Weekend Timeline · Working Schedule
-                </Badge>
-              </div>
               <h1 className="font-heading text-4xl font-bold tracking-tight md:text-5xl">
                 Hackathon Schedule
               </h1>
@@ -181,9 +175,6 @@ export default function SchedulePage() {
           <div className="mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10 xl:px-12 py-16 md:py-20">
             <ScrollReveal>
               <div className="max-w-2xl">
-                <Badge variant="accent" className="mb-3">
-                  Checklist
-                </Badge>
                 <h2 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight">
                   What to bring &amp; preparation
                 </h2>
